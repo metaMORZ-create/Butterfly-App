@@ -3,6 +3,7 @@ import 'package:butterfly_app/models/findings.dart';
 import 'package:butterfly_app/pages/finding_result_page.dart';
 import 'package:butterfly_app/services/finding_service.dart';
 import 'package:flutter/material.dart';
+import 'finding_result_page.dart'; // Pfad ggf. anpassen
 
 class MyButterfliesPage extends StatefulWidget {
   const MyButterfliesPage({super.key});
