@@ -23,9 +23,10 @@ class _RegisterPageState extends State<RegisterPage> {
       // Login überprüfen und ggf. weiterleiten
       final success = await LoginRegisterService.register(email, username, password);
       if (success) {
-        Navigator.pushReplacement(
+        Navigator.pushAndRemoveUntil(
           context,
           MaterialPageRoute(builder: (_) => const HomePage()),
+          (route) => false,
         );
       } else {
         ScaffoldMessenger.of(
