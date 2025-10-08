@@ -21,7 +21,7 @@ class _IntroPageState extends State<IntroPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // Logo (Platzhalter – kann jederzeit durch ein Asset ersetzt werden)
-              const Icon(Icons.bug_report, size: 100, color: Colors.orange),
+              const Icon(Icons.bug_report, size: 100, color: Colors.purple),
 
               const SizedBox(height: 10),
 

@@ -46,7 +46,7 @@ class _RegisterPageState extends State<RegisterPage> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               // Logo
-              Image.asset("lib/images/logo.png"),
+              const Icon(Icons.bug_report, size: 100, color: Colors.purple),
               const SizedBox(height: 10),
               Form(
                 key: _formKey,
