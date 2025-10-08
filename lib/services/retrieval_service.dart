@@ -27,4 +27,14 @@ class RetrievalService {
     final items = (map["items"] as List<dynamic>? ?? []);
     return items.map((e) => UserUpload.fromJson(e as Map<String, dynamic>)).toList();
   }
+
+  static Future<ButterflyLite> getButterfly(int id) async {
+    final uri = Uri.parse("$kApiBase/butterflies/$id");
+    final res = await http.get(uri);
+    if (res.statusCode != 200) {
+      throw Exception("Fehler ${res.statusCode}: ${res.body}");
+    }
+    final map = json.decode(res.body) as Map<String, dynamic>;
+    return ButterflyLite.fromJson(map);
+  }
 }
