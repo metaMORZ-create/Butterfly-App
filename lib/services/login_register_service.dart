@@ -7,7 +7,7 @@ class LoginRegisterService {
   // Login Verifizierung
   static Future<bool> login(String username, String password) async {
     const url =
-        "https://api-chatbot-berufsschule-production.up.railway.app/users/login";
+        "https://web-production-97da3.up.railway.app/users/login";
 
     try {
       final response = await http.post(
@@ -47,7 +47,7 @@ class LoginRegisterService {
     String password,
   ) async {
     const url =
-        "https://api-chatbot-berufsschule-production.up.railway.app/users/register";
+        "https://web-production-97da3.up.railway.app/users/register";
 
     try {
       final response = await http.post(
