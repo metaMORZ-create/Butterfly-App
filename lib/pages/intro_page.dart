@@ -1,9 +1,15 @@
-import "package:butterfly_app/pages/home_page.dart";
 import "package:flutter/material.dart";
+import "package:butterfly_app/components/login_button.dart";
+import "package:butterfly_app/components/register_button.dart";
 
-class IntroPage extends StatelessWidget {
+class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
 
+  @override
+  State<IntroPage> createState() => _IntroPageState();
+}
+
+class _IntroPageState extends State<IntroPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +20,7 @@ class IntroPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Logo (Platzhalter)
+              // Logo (Platzhalter – kann jederzeit durch ein Asset ersetzt werden)
               const Icon(Icons.bug_report, size: 100, color: Colors.orange),
 
               const SizedBox(height: 10),
@@ -25,27 +31,13 @@ class IntroPage extends StatelessWidget {
                 style: TextStyle(color: Colors.grey, fontSize: 16),
                 textAlign: TextAlign.center,
               ),
+
               const SizedBox(height: 48),
 
-              // Weiter Button
-              SizedBox(
-                width: double.infinity,
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(builder: (_) => const HomePage()),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                    padding: const EdgeInsets.symmetric(vertical: 14),
-                  ),
-                  child: const Text(
-                    "Weiter",
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
-                  ),
-                ),
-              ),
+              // Registrieren & Login (wie in deinem Beispiel)
+              const RegisterButton(),
+              const SizedBox(height: 20),
+              const LoginButton(),
             ],
           ),
         ),
