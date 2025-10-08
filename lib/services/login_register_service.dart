@@ -6,8 +6,7 @@ import "package:http/http.dart" as http;
 class LoginRegisterService {
   // Login Verifizierung
   static Future<bool> login(String username, String password) async {
-    const url =
-        "https://web-production-97da3.up.railway.app/users/login";
+    const url = "https://web-production-97da3.up.railway.app/users/login";
 
     try {
       final response = await http.post(
@@ -28,7 +27,6 @@ class LoginRegisterService {
         await prefs.setString('username', username);
         await prefs.setInt('user_id', userId);
 
-
         return true;
       } else {
         debugPrint("Login Fehlgeschlagen");
@@ -46,8 +44,7 @@ class LoginRegisterService {
     String username,
     String password,
   ) async {
-    const url =
-        "https://web-production-97da3.up.railway.app/users/register";
+    const url = "https://web-production-97da3.up.railway.app/users/register";
 
     try {
       final response = await http.post(
@@ -84,11 +81,14 @@ class LoginRegisterService {
     }
   }
 
-  Future<void> logout() async {
-    // Standort-Tracking & Polygon-Update stoppen
-
-    // SharedPreferences leeren
-    final prefs = await SharedPreferences.getInstance();
-    await prefs.clear();
+  static Future<bool> logout() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      await prefs.clear();
+      return true;
+    } catch (e) {
+      print("Logout fehlgeschlagen: $e");
+      return false;
+    }
   }
 }

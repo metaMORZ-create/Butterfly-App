@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:butterfly_app/services/login_register_service.dart';
+import 'package:butterfly_app/pages/intro_page.dart';
 
 class SettingsPage extends StatefulWidget {
   const SettingsPage({super.key});
@@ -64,18 +66,18 @@ class _SettingsPageState extends State<SettingsPage> {
             onTap: () {
               showAboutDialog(
                 context: context,
-                applicationName: 'MapMates',
+                applicationName: 'Butterfly App',
                 applicationVersion: '1.0.0',
                 applicationIcon: const FlutterLogo(),
                 children: const [
                   SizedBox(height: 8),
-                  Text('Eine kleine App, die besuchte Orte bunt markiert.'),
+                  Text('Eine kleine App, die Schmetterlinge entdecken lässt.'),
                 ],
               );
             },
           ),
 
-          // Platzhalter-Aktion (z. B. Cache leeren)
+          // Cache leeren
           ListTile(
             leading: const Icon(Icons.cleaning_services_outlined),
             title: const Text('Cache leeren'),
@@ -85,6 +87,24 @@ class _SettingsPageState extends State<SettingsPage> {
               );
             },
           ),
+
+          const Divider(height: 32),
+
+          // Logout Button
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: ElevatedButton.icon(
+              icon: const Icon(Icons.logout),
+              label: const Text('Logout'),
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.redAccent,
+                foregroundColor: Colors.white,
+                padding: const EdgeInsets.symmetric(vertical: 14),
+              ),
+              onPressed: _logout,
+            ),
+          ),
+          const SizedBox(height: 24),
         ],
       ),
     );
@@ -117,6 +137,25 @@ class _SettingsPageState extends State<SettingsPage> {
 
     if (selected != null) {
       setState(() => language = selected);
+    }
+  }
+
+  Future<void> _logout() async {
+    final success = await LoginRegisterService.logout();
+
+    if (mounted) {
+      if (success) {
+        // Zur IntroPage zurückkehren und Navigation-Stack leeren
+        Navigator.pushAndRemoveUntil(
+          context,
+          MaterialPageRoute(builder: (_) => const IntroPage()),
+          (route) => false,
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text('Logout fehlgeschlagen')),
+        );
+      }
     }
   }
 }
