@@ -1,30 +1,34 @@
 // lib/features/camera/finding_result_page.dart
 import 'dart:io';
+import 'package:butterfly_app/services/upload_service.dart';
 import 'package:flutter/material.dart';
 import 'package:uuid/uuid.dart';
 
 // passe diese Importe an dein Projekt an:
 import 'package:butterfly_app/models/findings.dart';
-import 'package:butterfly_app/services/finding_service.dart';
 
 class FindingResultPage extends StatelessWidget {
-  final File? imageFile;  // wenn neu fotografiert
+  final File? imageFile; // wenn neu fotografiert
   final Finding? finding; // wenn aus "Meine Schmetterlinge" geöffnet
 
-  const FindingResultPage({super.key, required this.imageFile}) : finding = null;
-  const FindingResultPage.fromFinding({super.key, required this.finding}) : imageFile = null;
+  const FindingResultPage({super.key, required this.imageFile})
+    : finding = null;
+  const FindingResultPage.fromFinding({super.key, required this.finding})
+    : imageFile = null;
 
   @override
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
 
     // Demo-Fallback, wenn von der Kamera kommend
-    final current = finding ??
+    final current =
+        finding ??
         Finding(
           id: const Uuid().v4(),
           imagePath: imageFile!.path,
           name: "Monarchfalter",
-          description: "Ein bekannter Wanderfalter mit orange-schwarzen Flügeln.",
+          description:
+              "Ein bekannter Wanderfalter mit orange-schwarzen Flügeln.",
           reproduction: "Ei → Raupe → Puppe → Falter",
           // Du kannst dein Modell gern um weitere Felder erweitern
         );
@@ -45,7 +49,12 @@ class FindingResultPage extends StatelessWidget {
         child: SafeArea(
           bottom: false,
           child: ListView(
-            padding: const EdgeInsets.fromLTRB(20, 20, 20, 100), // unten Platz für den Button
+            padding: const EdgeInsets.fromLTRB(
+              20,
+              20,
+              20,
+              100,
+            ), // unten Platz für den Button
             children: [
               _HeaderImage(imagePath: current.imagePath),
               const SizedBox(height: 20),
@@ -54,8 +63,8 @@ class FindingResultPage extends StatelessWidget {
               Text(
                 current.name,
                 style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                      fontWeight: FontWeight.w700,
-                    ),
+                  fontWeight: FontWeight.w700,
+                ),
               ),
               const SizedBox(height: 8),
               Text(
@@ -72,8 +81,14 @@ class FindingResultPage extends StatelessWidget {
                 children: [
                   _InfoChip(icon: Icons.eco, label: "Nektartrinker"),
                   _InfoChip(icon: Icons.park, label: "Lebensraum: Wiesen"),
-                  _InfoChip(icon: Icons.stacked_line_chart, label: "Flugsaison: Mai–Sep"),
-                  _InfoChip(icon: Icons.straighten, label: "Spannweite: ~95–105 mm"),
+                  _InfoChip(
+                    icon: Icons.stacked_line_chart,
+                    label: "Flugsaison: Mai–Sep",
+                  ),
+                  _InfoChip(
+                    icon: Icons.straighten,
+                    label: "Spannweite: ~95–105 mm",
+                  ),
                 ],
               ),
 
@@ -106,34 +121,87 @@ class FindingResultPage extends StatelessWidget {
       ),
 
       // Sticky Save-Button
-      bottomNavigationBar: finding == null
-          ? SafeArea(
-              top: false,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
-                child: SizedBox(
-                  width: double.infinity,
-                  child: FilledButton.icon(
-                    style: FilledButton.styleFrom(
-                      padding: const EdgeInsets.symmetric(vertical: 16),
-                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
+      bottomNavigationBar:
+          finding == null
+              ? SafeArea(
+                top: false,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(20, 8, 20, 16),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: FilledButton.icon(
+                      style: FilledButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 16),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(24),
+                        ),
+                      ),
+                      onPressed: () async {
+                        // Beispielwerte – je nach App-Logik ersetzen:
+                        const userId = 1;
+                        const butterflyId = 42;
+
+                        // Koordinaten: hole sie aus deinem Location-Service – hier Demo:
+                        const lat = 48.1372;
+                        const lon = 11.5756;
+
+                        try {
+                          // Simple Loading
+                          showDialog(
+                            context: context,
+                            barrierDismissible: false,
+                            builder:
+                                (_) => const Center(
+                                  child: CircularProgressIndicator(),
+                                ),
+                          );
+
+                          // Upload (imageFile kommt bei "neuem Foto" aus deinem current.imagePath)
+                          final file = File(current.imagePath);
+                          final result = await UploadService.uploadPhoto(
+                            file: file,
+                            userId: userId,
+                            butterflyId: butterflyId,
+                            latitude: lat,
+                            longitude: lon,
+                            // takenAt: DateTime.now(), // optional, sonst automatisch now()
+                          );
+
+                          // Optional: lokal in deiner App speichern (z. B. mit FindingService)
+                          // -> Du könntest hier die result.imageUrl in dein Finding-Objekt übernehmen
+                          // await FindingService.saveFinding(current.copyWith(remoteUrl: result.imageUrl));
+
+                          if (context.mounted)
+                            Navigator.pop(context); // Loading schließen
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                  "Upload ok! URL: ${result.imageUrl}",
+                                ),
+                              ),
+                            );
+                            Navigator.pop(context); // zurück
+                          }
+                        } catch (e) {
+                          if (context.mounted)
+                            Navigator.pop(context); // Loading schließen
+                          if (context.mounted) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text("Upload fehlgeschlagen: $e"),
+                              ),
+                            );
+                          }
+                        }
+                      },
+                      icon: const Icon(Icons.bookmark_added),
+                      label: const Text("Fund speichern"),
                     ),
-                    onPressed: () async {
-                      await FindingService.saveFinding(current);
-                      if (context.mounted) {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text("Fund gespeichert!")),
-                        );
-                        Navigator.pop(context);
-                      }
-                    },
-                    icon: const Icon(Icons.bookmark_added),
-                    label: const Text("Fund speichern"),
                   ),
                 ),
-              ),
-            )
-          : null,
+              )
+              : null,
     );
   }
 }
@@ -163,10 +231,7 @@ class _HeaderImage extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 16 / 9,
-              child: Image.file(
-                File(imagePath),
-                fit: BoxFit.cover,
-              ),
+              child: Image.file(File(imagePath), fit: BoxFit.cover),
             ),
             // leichte Gradient-Overlay unten für Lesbarkeit
             Positioned.fill(
@@ -174,7 +239,10 @@ class _HeaderImage extends StatelessWidget {
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Colors.transparent, Colors.black.withOpacity(0.15)],
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withOpacity(0.15),
+                      ],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                     ),
@@ -187,7 +255,10 @@ class _HeaderImage extends StatelessWidget {
               left: 12,
               top: 12,
               child: Container(
-                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 10,
+                  vertical: 6,
+                ),
                 decoration: BoxDecoration(
                   color: scheme.primary.withOpacity(0.85),
                   borderRadius: BorderRadius.circular(12),
@@ -196,7 +267,13 @@ class _HeaderImage extends StatelessWidget {
                   children: const [
                     Icon(Icons.auto_awesome, size: 16, color: Colors.white),
                     SizedBox(width: 6),
-                    Text("Erkannt (Demo)", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600)),
+                    Text(
+                      "Erkannt (Demo)",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -240,7 +317,11 @@ class _InfoCard extends StatelessWidget {
   final IconData leading;
   final List<Widget> children;
 
-  const _InfoCard({required this.title, required this.leading, required this.children});
+  const _InfoCard({
+    required this.title,
+    required this.leading,
+    required this.children,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -254,11 +335,18 @@ class _InfoCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Row(children: [
-              Icon(leading, color: scheme.primary),
-              const SizedBox(width: 10),
-              Text(title, style: Theme.of(context).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.w600)),
-            ]),
+            Row(
+              children: [
+                Icon(leading, color: scheme.primary),
+                const SizedBox(width: 10),
+                Text(
+                  title,
+                  style: Theme.of(context).textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
             const SizedBox(height: 8),
             ...children,
           ],
@@ -278,10 +366,7 @@ class _Bullet extends StatelessWidget {
       padding: const EdgeInsets.symmetric(vertical: 4),
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text("•  "),
-          Expanded(child: Text(text)),
-        ],
+        children: [const Text("•  "), Expanded(child: Text(text))],
       ),
     );
   }

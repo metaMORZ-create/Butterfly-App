@@ -1,9 +1,15 @@
+// lib/models/findings.dart
 class Finding {
-  final String id;
-  final String imagePath; // aufgenommenes Bild (lokal)
+  final String id;            // lokal generiert (UUID)
+  final String imagePath;     // lokaler Datei-Pfad (bei frischen Funden)
   final String name;
   final String description;
-  final String reproduction; // „Vermehrung“
+  final String reproduction;
+
+  // 🆕 Remote-Felder (optional)
+  final int? remoteId;        // ID aus der API (Postgres)
+  final String? imageUrl;     // Bild-URL aus der API
+  final int? userId;          // für Uploads
 
   Finding({
     required this.id,
@@ -11,7 +17,21 @@ class Finding {
     required this.name,
     required this.description,
     required this.reproduction,
+    this.remoteId,
+    this.imageUrl,
+    this.userId,
   });
+
+  factory Finding.fromJson(Map<String, dynamic> j) => Finding(
+        id: j['id'],
+        imagePath: j['imagePath'],
+        name: j['name'],
+        description: j['description'],
+        reproduction: j['reproduction'],
+        remoteId: j['remoteId'],
+        imageUrl: j['imageUrl'],
+        userId: j['userId'],
+      );
 
   Map<String, dynamic> toJson() => {
         'id': id,
@@ -19,13 +39,31 @@ class Finding {
         'name': name,
         'description': description,
         'reproduction': reproduction,
+        'remoteId': remoteId,
+        'imageUrl': imageUrl,
+        'userId': userId,
       };
 
-  factory Finding.fromJson(Map<String, dynamic> json) => Finding(
-        id: json['id'],
-        imagePath: json['imagePath'],
-        name: json['name'],
-        description: json['description'],
-        reproduction: json['reproduction'],
-      );
+  //  Helper: Kopie mit Änderungen
+  Finding copyWith({
+    String? id,
+    String? imagePath,
+    String? name,
+    String? description,
+    String? reproduction,
+    int? remoteId,
+    String? imageUrl,
+    int? userId,
+  }) {
+    return Finding(
+      id: id ?? this.id,
+      imagePath: imagePath ?? this.imagePath,
+      name: name ?? this.name,
+      description: description ?? this.description,
+      reproduction: reproduction ?? this.reproduction,
+      remoteId: remoteId ?? this.remoteId,
+      imageUrl: imageUrl ?? this.imageUrl,
+      userId: userId ?? this.userId,
+    );
+  }
 }
