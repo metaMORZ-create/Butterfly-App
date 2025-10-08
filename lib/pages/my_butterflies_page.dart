@@ -1,8 +1,10 @@
-import 'dart:io';
+import 'package:flutter/material.dart';
+import 'package:uuid/uuid.dart';
+
 import 'package:butterfly_app/models/findings.dart';
 import 'package:butterfly_app/pages/finding_result_page.dart';
-import 'package:butterfly_app/services/finding_service.dart';
-import 'package:flutter/material.dart';
+import 'package:butterfly_app/services/retrieval_service.dart';
+import 'package:butterfly_app/models/user_upload.dart';
 
 class MyButterfliesPage extends StatefulWidget {
   const MyButterfliesPage({super.key});
@@ -12,8 +14,11 @@ class MyButterfliesPage extends StatefulWidget {
 }
 
 class _MyButterfliesPageState extends State<MyButterfliesPage> {
-  List<Finding> _findings = [];
   bool _loading = true;
+  List<UserUpload> _uploads = [];
+
+  // TODO: Echte userId aus deinem App-State/Auth ziehen
+  final int _userId = 1;
 
   @override
   void initState() {
@@ -22,19 +27,47 @@ class _MyButterfliesPageState extends State<MyButterfliesPage> {
   }
 
   Future<void> _load() async {
-    final list = await FindingService.loadFindings();
-    if (!mounted) return;
-    setState(() {
-      _findings = list.reversed.toList(); // neueste zuerst
-      _loading = false;
-    });
+    try {
+      final items = await RetrievalService.getUserUploads(
+        userId: _userId,
+        limit: 100,
+        sort: "desc",
+        withButterfly: true, // damit kommt schon butterfly mit
+      );
+      if (!mounted) return;
+      setState(() {
+        _uploads = items;
+        _loading = false;
+      });
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _loading = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Fehler beim Laden: $e")),
+      );
+    }
   }
 
-  void _openFinding(Finding f) {
+  void _openUpload(UserUpload it) {
+    final b = it.butterfly;
+    final name = b?.commonName ?? "Schmetterling";
+    final desc = b?.description ?? "";
+    final repro = b?.reproduction ?? "";
+
+    // Finding für deine bestehende FindingResultPage bauen
+    final finding = Finding(
+      id: const Uuid().v4(),
+      imagePath: it.imageUrl, // URL von Cloudinary
+      name: name,
+      description: desc,
+      reproduction: repro,
+      // ggf. weitere Felder mappen
+    );
+
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => FindingResultPage.fromFinding(finding: f),
+        builder: (_) => FindingResultPage.fromFinding(finding: finding),
       ),
     );
   }
@@ -45,64 +78,69 @@ class _MyButterfliesPageState extends State<MyButterfliesPage> {
 
     return Scaffold(
       appBar: AppBar(title: const Text('Meine Schmetterlinge')),
-      body:
-          _loading
-              ? const Center(child: CircularProgressIndicator())
-              : _findings.isEmpty
+      body: _loading
+          ? const Center(child: CircularProgressIndicator())
+          : _uploads.isEmpty
               ? Center(
-                child: Padding(
-                  padding: const EdgeInsets.all(24),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Icon(Icons.bug_report, size: 64, color: scheme.primary),
-                      const SizedBox(height: 12),
-                      Text(
-                        'Noch keine Funde',
-                        style: Theme.of(context).textTheme.titleLarge,
-                      ),
-                      const SizedBox(height: 6),
-                      Text(
-                        'Nimm ein Foto im Kamerabereich auf, um deinen ersten Fund zu speichern.',
-                        textAlign: TextAlign.center,
-                      ),
-                    ],
+                  child: Padding(
+                    padding: const EdgeInsets.all(24),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Icon(Icons.bug_report, size: 64, color: scheme.primary),
+                        const SizedBox(height: 12),
+                        Text('Noch keine Uploads',
+                            style: Theme.of(context).textTheme.titleLarge),
+                        const SizedBox(height: 6),
+                        const Text(
+                          'Fotografiere einen Falter und speichere ihn, um ihn hier zu sehen.',
+                          textAlign: TextAlign.center,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              )
+                )
               : RefreshIndicator(
-                onRefresh: _load,
-                child: GridView.builder(
-                  padding: const EdgeInsets.all(16),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 12,
-                    mainAxisSpacing: 12,
+                  onRefresh: _load,
+                  child: GridView.builder(
+                    padding: const EdgeInsets.all(16),
+                    gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 12,
+                      mainAxisSpacing: 12,
+                      childAspectRatio: 0.95,
+                    ),
+                    itemCount: _uploads.length,
+                    itemBuilder: (context, i) {
+                      final it = _uploads[i];
+                      final title = it.butterfly?.commonName ?? "Schmetterling";
+                      final thumb = it.butterfly?.thumbnailUrl ?? it.imageUrl;
+
+                      return _Tile(
+                        title: title,
+                        imageUrl: thumb,
+                        onTap: () => _openUpload(it),
+                      );
+                    },
                   ),
-                  itemCount: _findings.length,
-                  itemBuilder: (context, i) {
-                    final f = _findings[i];
-                    return _FindingTile(
-                      finding: f,
-                      onTap: () => _openFinding(f),
-                    );
-                  },
                 ),
-              ),
     );
   }
 }
 
-class _FindingTile extends StatelessWidget {
-  final Finding finding;
+class _Tile extends StatelessWidget {
+  final String title;
+  final String imageUrl;
   final VoidCallback onTap;
 
-  const _FindingTile({required this.finding, required this.onTap});
+  const _Tile({
+    required this.title,
+    required this.imageUrl,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    final file = File(finding.imagePath);
-
     return Card(
       clipBehavior: Clip.antiAlias,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -111,37 +149,30 @@ class _FindingTile extends StatelessWidget {
         child: Stack(
           children: [
             Positioned.fill(
-              child: Image.file(
-                file,
+              child: Image.network(
+                imageUrl,
                 fit: BoxFit.cover,
-                errorBuilder:
-                    (_, __, ___) => Container(
-                      color: Theme.of(context).colorScheme.surfaceVariant,
-                      child: const Center(child: Icon(Icons.broken_image)),
-                    ),
+                errorBuilder: (_, __, ___) => Container(
+                  color: Theme.of(context).colorScheme.surfaceVariant,
+                  child: const Center(child: Icon(Icons.broken_image)),
+                ),
+                loadingBuilder: (ctx, child, progress) =>
+                    progress == null ? child : const Center(child: CircularProgressIndicator()),
               ),
             ),
             Positioned(
-              left: 8,
-              right: 8,
-              bottom: 8,
+              left: 8, right: 8, bottom: 8,
               child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 10,
-                  vertical: 6,
-                ),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                 decoration: BoxDecoration(
                   color: Colors.black.withOpacity(0.45),
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Text(
-                  finding.name,
+                  title,
                   maxLines: 1,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  style: const TextStyle(color: Colors.white, fontWeight: FontWeight.w600),
                 ),
               ),
             ),
