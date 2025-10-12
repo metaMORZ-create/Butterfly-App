@@ -2,13 +2,10 @@ import 'package:butterfly_app/components/my_butterflies/empty_state.dart';
 import 'package:butterfly_app/components/my_butterflies/uploads_grid.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:uuid/uuid.dart';
 
-import 'package:butterfly_app/models/findings.dart';
 import 'package:butterfly_app/pages/finding_result_page.dart';
 import 'package:butterfly_app/services/retrieval_service.dart';
 import 'package:butterfly_app/models/user_upload.dart';
-
 
 class MyButterfliesPage extends StatefulWidget {
   const MyButterfliesPage({super.key});
@@ -80,22 +77,15 @@ class _MyButterfliesPageState extends State<MyButterfliesPage> {
 
   void _openUpload(UserUpload it) {
     final b = it.butterfly;
-    final name = b?.commonName ?? "Schmetterling";
-    final desc = b?.description ?? "";
-    final repro = b?.reproduction ?? "";
-
-    final finding = Finding(
-      id: const Uuid().v4(),
-      imagePath: it.imageUrl, // URL (Cloudinary)
-      name: name,
-      description: desc,
-      reproduction: repro,
-    );
+    final speciesName = b?.commonName ?? "Unbekannter Falter";
 
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (_) => FindingResultPage.fromFinding(finding: finding),
+        builder: (_) => FindingResultPage(
+          speciesId: speciesName,
+          imageUrl: it.imageUrl,
+        ),
       ),
     );
   }

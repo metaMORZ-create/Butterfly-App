@@ -26,23 +26,37 @@ class HeaderImage extends StatelessWidget {
           children: [
             AspectRatio(
               aspectRatio: 16 / 9,
-              child: Image.file(
-                File(imagePath),
-                fit: BoxFit.cover,
-                errorBuilder: (_, __, ___) => const Center(
-                  child: Padding(
-                    padding: EdgeInsets.all(24),
-                    child: Text("Bild konnte nicht geladen werden."),
-                  ),
-                ),
-              ),
+              child: imagePath.startsWith('http')
+                  ? Image.network(
+                      imagePath,
+                      fit: BoxFit.cover,
+                      errorBuilder: (_, __, ___) => const Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(24),
+                          child: Text('Bild konnte nicht geladen werden.'),
+                        ),
+                      ),
+                    )
+                  : Image.file(
+                      File(imagePath),
+                      fit: BoxFit.cover,
+                      errorBuilder: (_, __, ___) => const Center(
+                        child: Padding(
+                          padding: EdgeInsets.all(24),
+                          child: Text('Bild konnte nicht geladen werden.'),
+                        ),
+                      ),
+                    ),
             ),
             Positioned.fill(
               child: IgnorePointer(
                 child: DecoratedBox(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
-                      colors: [Colors.transparent, Colors.black.withOpacity(0.15)],
+                      colors: [
+                        Colors.transparent,
+                        Colors.black.withOpacity(0.15)
+                      ],
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                     ),
@@ -54,8 +68,7 @@ class HeaderImage extends StatelessWidget {
               left: 12,
               top: 12,
               child: Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
                 decoration: BoxDecoration(
                   color: scheme.primary.withOpacity(0.85),
                   borderRadius: BorderRadius.circular(12),
@@ -65,7 +78,7 @@ class HeaderImage extends StatelessWidget {
                     Icon(Icons.auto_awesome, size: 16, color: Colors.white),
                     SizedBox(width: 6),
                     Text(
-                      "Erkannt (Demo)",
+                      'Erkannt (Demo)',
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.w600),
                     ),
