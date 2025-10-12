@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:uuid/uuid.dart';
 
 import 'package:butterfly_app/models/findings.dart';
@@ -15,21 +16,47 @@ class MyButterfliesPage extends StatefulWidget {
 
 class _MyButterfliesPageState extends State<MyButterfliesPage> {
   bool _loading = true;
+  int? _userId;
   List<UserUpload> _uploads = [];
-
-  // TODO: Echte userId aus deinem App-State/Auth ziehen
-  final int _userId = 1;
 
   @override
   void initState() {
     super.initState();
-    _load();
+    _loadUserIdAndData();
+  }
+
+  Future<void> _loadUserIdAndData() async {
+    try {
+      final prefs = await SharedPreferences.getInstance();
+      final id = prefs.getInt('userId');
+
+      if (!mounted) return;
+
+      if (id == null) {
+        setState(() => _loading = false);
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(content: Text("Keine User-ID gefunden. Bitte neu einloggen.")),
+        );
+        return;
+      }
+
+      setState(() => _userId = id);
+      await _load();
+    } catch (e) {
+      if (!mounted) return;
+      setState(() => _loading = false);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text("Fehler beim Laden der User-ID: $e")),
+      );
+    }
   }
 
   Future<void> _load() async {
+    if (_userId == null) return;
+
     try {
       final items = await RetrievalService.getUserUploads(
-        userId: _userId,
+        userId: _userId!,
         limit: 100,
         sort: "desc",
         withButterfly: true, // damit kommt schon butterfly mit

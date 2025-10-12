@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
-import "package:butterfly_app/components/login_button.dart";
-import "package:butterfly_app/components/register_button.dart";
+import "package:butterfly_app/components/intro_page/login_button.dart";
+import "package:butterfly_app/components/intro_page/register_button.dart";
 
 class IntroPage extends StatefulWidget {
   const IntroPage({super.key});
