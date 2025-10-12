@@ -1,9 +1,9 @@
 import 'dart:io';
 import 'dart:math';
+import 'package:butterfly_app/pages/new_capture_result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:butterfly_app/services/image_service.dart';
 import 'package:butterfly_app/info/butterfly_list.dart';
-import 'finding_result_page.dart'; // passe bei Bedarf den Pfad an
 
 class CameraPage extends StatefulWidget {
   const CameraPage({super.key});
@@ -27,9 +27,9 @@ class _CameraPageState extends State<CameraPage> {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => FindingResultPage(
+          builder: (_) => NewCaptureResultPage(
             butterflyId: randomId,
-            imageUrl: image.path, // lokaler Pfad
+            imagePath: image.path, // lokaler Pfad
           ),
         ),
       );
