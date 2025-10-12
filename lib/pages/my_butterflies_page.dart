@@ -28,7 +28,7 @@ class _MyButterfliesPageState extends State<MyButterfliesPage> {
   Future<void> _loadUserIdAndData() async {
     try {
       final prefs = await SharedPreferences.getInstance();
-      final id = prefs.getInt('userId');
+      final id = prefs.getInt('user_id');
 
       if (!mounted) return;
 
