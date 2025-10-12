@@ -1,7 +1,9 @@
 import 'dart:io';
-import 'package:butterfly_app/services/image_service.dart';
+import 'dart:math';
 import 'package:flutter/material.dart';
-import 'finding_result_page.dart';
+import 'package:butterfly_app/services/image_service.dart';
+import 'package:butterfly_app/info/butterfly_list.dart';
+import 'finding_result_page.dart'; // passe bei Bedarf den Pfad an
 
 class CameraPage extends StatefulWidget {
   const CameraPage({super.key});
@@ -18,20 +20,20 @@ class _CameraPageState extends State<CameraPage> {
     if (image != null && mounted) {
       setState(() => _lastImage = image);
 
-      // Nach Foto -> zur Ergebnis-Seite navigieren
+      // Zufällige butterflyId aus der Map
+      final ids = idToSpeciesName.keys.toList();
+      final randomId = ids[Random().nextInt(ids.length)];
+
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (_) => FindingResultPage(imageFile: image),
+          builder: (_) => FindingResultPage(
+            butterflyId: randomId,
+            imageUrl: image.path, // lokaler Pfad
+          ),
         ),
       );
     }
-  }
-
-  void _notImplemented(String feature) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text("$feature ist noch nicht implementiert.")),
-    );
   }
 
   @override
@@ -58,7 +60,8 @@ class _CameraPageState extends State<CameraPage> {
                 Icon(
                   Icons.camera_alt_rounded,
                   size: 120,
-                  color: Theme.of(context).colorScheme.primary.withOpacity(0.6),
+                  color:
+                      Theme.of(context).colorScheme.primary.withOpacity(0.6),
                 ),
               const SizedBox(height: 20),
               const SizedBox(height: 40),
@@ -74,7 +77,9 @@ class _CameraPageState extends State<CameraPage> {
               SizedBox(
                 width: double.infinity,
                 child: OutlinedButton.icon(
-                  onPressed: () => _notImplemented("Live-Aufnahme starten"),
+                  onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text("Live-Aufnahme starten ist noch nicht implementiert.")),
+                  ),
                   icon: const Icon(Icons.videocam),
                   label: const Text("Live-Aufnahme starten"),
                 ),
