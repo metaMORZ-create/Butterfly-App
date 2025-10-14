@@ -1257,7 +1257,7 @@ final Map<String, ButterflyInfo> butterflyInfoMap = {
 
   // 34. Crescent (Phyciodes tharos - Pearl Crescent)
   // N. America; orange patterned butterfly; host asters; wingspan 30–40 mm.
-  'Crescent': const ButterflyInfo(
+  'Crecent': const ButterflyInfo(
     description:
         'The Pearl Crescent is a small orange-and-black butterfly common in sunny meadows and roadsides across North America.',
     reproduction:
@@ -3201,7 +3201,7 @@ final Map<String, ButterflyInfo> butterflyInfoMap = {
 
 // 92. Striated Queen (Danaus genutia)
 // South & Southeast Asia; orange with black-and-white veins; host: milkweed; wingspan 70–90 mm.
-'Striated Queen': const ButterflyInfo(
+'Straited Queen': const ButterflyInfo(
   description:
       'A large orange butterfly with black-and-white stripes, closely related to the Monarch. Common in South and Southeast Asia.',
   reproduction:
