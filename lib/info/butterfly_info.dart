@@ -8,10 +8,7 @@ class InfoChipData {
   final IconData icon;
   final String label;
 
-  const InfoChipData({
-    required this.icon,
-    required this.label,
-  });
+  const InfoChipData({required this.icon, required this.label});
 }
 
 /// A data class used to represent one information card.  An information
@@ -57,882 +54,1769 @@ class ButterflyInfo {
 /// the database).  This allows the details page to find the correct data
 /// when a user selects a butterfly from the collection.
 final Map<String, ButterflyInfo> butterflyInfoMap = {
-  // 1. Admiral (Vanessa atalanta)
-  // Facts gathered from Biologie‑Schule: wingspan 5–6 cm, found in forests,
-  // meadows and gardens; adults feed on nectar from butterfly bush,
-  // phlox and goldenrod; larvae feed on nettles; eggs laid on nettles;
-  // two generations with the last migrating south【89588682556175†L74-L98】.
-  'Admiral': const ButterflyInfo(
+  // 1. Adonis (Adonis Blue, Lysandra/Polyommatus bellargus)
+  // Habitat: warm chalk/limestone grasslands; host: horseshoe vetch; 2 broods (May–Jun, Aug–Sep);
+  // wingspan ~30–38 mm. Sources: Butterfly Conservation; The Wildlife Trusts; Wikipedia. :contentReference[oaicite:0]{index=0}
+  'Adonis': const ButterflyInfo(
     description:
-        'Der Admiral (Vanessa atalanta) ist ein auffälliger Wanderfalter mit roten Bändern und dunkelbraunen Flügeln. Er kommt in Wäldern, an Waldrändern, in Gärten und auf Streuobstwiesen vor und besitzt eine Flügelspannweite von rund 5–6 cm. Erwachsene Falter ernähren sich von Blütennektar etwa von Sommerflieder, Phlox und Goldrute sowie Fallobst.',
+        'The Adonis Blue (Lysandra bellargus) male is a vivid sky-blue; females are brown with orange spots. It flies low over warm, south-facing chalk or limestone grasslands.',
     reproduction:
-        'Ei → Raupe → Puppe → Falter. Die Weibchen legen ihre Eier einzeln auf Brennnesseln ab. Die Raupen fressen mehrere Wochen an den Blättern, ehe sie sich in lockeren Gespinsten verpuppen. Es gibt meist zwei Generationen; die im Herbst schlüpfende Generation wandert im Winter in südlichere Regionen.',
+        'Egg → caterpillar → pupa → adult. Eggs are laid on horseshoe vetch (Hippocrepis comosa). Two broods per year; overwinters as a small larva.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Wälder, Gärten'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Juni–Okt'),
-      InfoChipData(icon: Icons.eco, label: 'Nektar: Sommerflieder, Phlox'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Brennnesseln'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: Chalk grassland'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Sep'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Horseshoe vetch'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~30–38 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
+        title: 'Breeding',
         leading: Icons.change_circle_outlined,
         bullets: [
-          'Eier werden einzeln auf Brennnesseln abgelegt',
-          'Raupennahrung: Brennnesselblätter',
-          'Verpuppung nach mehreren Wochen',
-          '2 Generationen pro Jahr; Herbstgeneration wandert südwärts'
+          'Eggs placed on horseshoe vetch',
+          'Overwinters as a small larva',
+          'Usually 2 broods/year in warm sites',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Mag warme, sonnige Standorte',
-          'Häufig an Sommerflieder und reifem Obst zu sehen',
-          'Raupen bevorzugen nährstoffreiche Brennnesselbestände',
+          'Search sunny, south-facing slopes',
+          'Often nectaring on short-grazed turf flowers',
         ],
       ),
     ],
   ),
 
-  // 2. Aurorafalter (Anthocharis cardamines)
-  // Larval food plants cardamine and garlic mustard; flight time mid/late
-  // April to June; moist meadows and forest edges; relies on cruciferous
-  // plants【965069978339699†L84-L97】.
-  'Aurorafalter': const ButterflyInfo(
+  // 2. African Giant Swallowtail (Papilio antimachus)
+  // Largest African butterfly (wingspan ~18–23 cm); West & Central African rainforests; males mud-puddle; canopy species. Sources: Wikipedia; SBBT; iNaturalist. :contentReference[oaicite:1]{index=1}
+  'African Giant Swallowtail': const ButterflyInfo(
     description:
-        'Der Aurorafalter (Anthocharis cardamines) ist ein Frühlingsfalter mit orangefarbenen Flecken auf den Vorderflügeln der Männchen. Er bewohnt feuchte Wiesen, Waldränder und Gebüschsäume. Sein Vorkommen hängt eng mit kreuzblütigen Pflanzen zusammen, auf denen die Raupen leben.',
+        'Papilio antimachus is Africa’s largest butterfly. Orange-brown with black markings, it lives mainly in the rainforest canopy; males sometimes descend to rivers to mud-puddle.',
     reproduction:
-        'Ei → Raupe → Puppe → Falter. Die Weibchen legen ihre Eier einzeln an Blütenständen von Wiesen-Schaumkraut und Knoblauchrauke. Die Raupen schlüpfen und fressen zuerst Blüten und Samenschoten. Nach dem Verpuppen überwintern die Puppen; im Frühjahr schlüpfen die Falter.',
+        'Egg → caterpillar → pupa → adult. Likely breeds high in the canopy; adults frequent sunny gaps and river edges.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: feuchte Wiesen'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Apr–Jun'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Schaumkraut, Rauke'),
-      InfoChipData(icon: Icons.palette, label: 'Männchen mit orangen Spitzen'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: Rainforest canopy'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Tropical year-round',
+      ),
+      InfoChipData(icon: Icons.eco, label: 'Adults: nectar & mud-puddling (♂)'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 18–23 cm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Notes',
+        leading: Icons.public,
         bullets: [
-          'Eier einzeln an Blütenknospen von Wiesen-Schaumkraut und Knoblauchrauke',
-          'Raupen fressen Blüten, Früchte und Schoten',
-          'Puppen überwintern an Stängeln',
-          'Eine Generation pro Jahr'
+          'Ranges across W & Central Africa',
+          'Males may gather along rivers',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Gut im zeitigen Frühling zu entdecken',
-          'Weibchen besitzen keine orangefarbene Spitze',
-          'Bevorzugt feuchte, sonnige Wiesen mit Kreuzblütlern',
+          'Scan river corridors at forest edges',
+          'Most activity near sunny stream sections',
         ],
       ),
     ],
   ),
 
-  // 3. Distelfalter (Vanessa cardui)
-  // Wingspan approx. 6 cm; flight April–Sept; habitats include forest edges
-  // and grasslands; adults feed on nectar, particularly thistle flowers;
-  // larvae feed on thistles, nettles, mallows; eggs laid on leaves; two
-  // generations, migrating south in autumn【548225091542521†L44-L104】.
-  'Distelfalter': const ButterflyInfo(
+  // 3. American Snoot (Libytheana carinenta)
+  // Hosts: hackberries (Celtis spp.); migrations noted in TX/MX; widespread in the Americas. Sources: Wikipedia; UF/IFAS; Texas A&M. :contentReference[oaicite:2]{index=2}
+  'American Snoot': const ButterflyInfo(
     description:
-        'Der Distelfalter (Vanessa cardui) ist ein weltweit verbreiteter Wanderfalter mit rötlich-orangefarbenen Flügeln. Er bevorzugt trockene offene Landschaften, Waldränder und Gärten. Die Flügelspannweite beträgt etwa 5–6 cm.',
+        'The American Snout (Libytheana carinenta) has an elongated “snout” formed by palps. Common in the Americas, sometimes migrating in large numbers.',
     reproduction:
-        'Ei → Raupe → Puppe → Falter. Weibchen legen ihre Eier einzeln auf die Blätter von Disteln, Brennnesseln, Malven und anderen Korbblütlern. Die Raupen leben zunächst einzeln und rollen Blätter zusammen; nach zwei bis drei Wochen verpuppen sie sich. Es gibt zwei Generationen pro Jahr; die Art zieht im Herbst nach Süden.',
+        'Egg → caterpillar → pupa → adult. Eggs laid singly on hackberry leaves (Celtis spp.). Multiple broods in warm regions.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: offene Flächen'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Apr–Sep'),
-      InfoChipData(icon: Icons.eco, label: 'Nektar: Disteln, Blüten'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Distel, Brennnessel'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: Woodlands, edges'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Most of year (warm areas)',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Hackberries (Celtis)',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~35–50 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
+        title: 'Breeding',
         leading: Icons.change_circle_outlined,
         bullets: [
-          'Eier einzeln an Distel- und Brennnesselblättern',
-          'Raupen rollen Blätter zu Schutzhüllen',
-          'Zwei Generationen pro Jahr',
-          'Herbstgeneration zieht in wärmere Regionen'
+          'Eggs placed singly on host',
+          'Caterpillars feed on Celtis leaves',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Oft an Distelblüten und Sommerflieder zu sehen',
-          'Langstreckenzieher – im Frühjahr aus Südeuropa eingewandert',
-          'An warmen Standorten und auf Brachflächen besonders zahlreich',
+          'Check hackberry trees',
+          'Watch for mass flights after rains',
         ],
       ),
     ],
   ),
 
-  // 4. Kleiner Fuchs (Aglais urticae)
-  // Wingspan up to 4–6 cm; inhabits forests, woodland edges, meadows, parks
-  // and gardens; eggs laid on nettles; larvae feed on nettles; pupal
-  // stage lasts about 12 days; up to three generations per season【5684916276817†L76-L100】.
-  'Kleiner Fuchs': const ButterflyInfo(
+  // 4. An 88 (Anna’s Eighty-eight, Diaethria anna)
+  // Wet tropical forests Mexico→Costa Rica; adults take rotting fruit; hosts in elm & soapberry families; wingspan ~35–45 mm. Sources: BAMONA; Wikipedia; other refs. :contentReference[oaicite:3]{index=3}
+  'An 88': const ButterflyInfo(
     description:
-        """Der Kleine Fuchs (Aglais urticae) ist ein häufig vorkommender
-orangefarbener Falter mit markanten schwarzen und blauen Flecken an den
-Flügelrändern. Er lebt in Wäldern, an Waldrändern, in Gärten und auf
-Wiesen. Die Flügelspannweite beträgt 4–6 cm.""",
+        'Diaethria anna shows the iconic “88” pattern on the hindwing underside. Found in wet tropical forests from Mexico to Costa Rica; rare stray to South Texas.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Die Weibchen legen bis zu 200 Eier in
-Gruppen an Brennnesseln. Die jungen Raupen leben gesellig in
-Gespinsten und fressen die Blätter. Nach etwa 12 Tagen verpuppen sie
-sich einzeln hängend. Es können zwei bis drei Generationen pro Jahr
-auftreten; die letzte Generation überwintert als Falter und fliegt
-bereits im Frühjahr.""",
+        'Egg → caterpillar → pupa → adult. Larvae feed on plants in the elm (Ulmaceae) and soapberry (Sapindaceae) families. Adults often feed at rotting fruit.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Waldränder, Gärten'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Mär–Okt'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Brennnessel'),
-      InfoChipData(icon: Icons.eco, label: 'Nektar: Disteln, Katzenminze'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: Wet tropical forest'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Tropical year-round',
+      ),
+      InfoChipData(icon: Icons.eco, label: 'Adult food: Rotting fruit'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~35–45 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier in Gruppen an Brennnesselblättern',
-          'Junge Raupen leben gesellig in Gespinsten',
-          'Verpuppung nach rund 12 Tagen',
-          'Mehrere Generationen, letztere überwintert als Falter'
+          'Look for fruit-bait stations',
+          'Often along forest edges & streams',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Range notes',
+        leading: Icons.public,
+        bullets: ['Common Mesoamerica', 'Occasional stray to S Texas'],
+      ),
+    ],
+  ),
+
+  // 5. Apollo (Parnassius apollo)
+  // Large alpine species; single brood; hosts Sedum/Sempervivum; wingspan ~62–95 mm. Sources: Wikipedia; Animalia; NatureGate. :contentReference[oaicite:4]{index=4}
+  'Apollo': const ButterflyInfo(
+    description:
+        'The Apollo (Parnassius apollo) is a large white mountain butterfly with black spots and red eye-spots, found on sunny alpine meadows and rocky slopes.',
+    reproduction:
+        'Egg → caterpillar → pupa → adult. Single brood. Larvae feed mainly on stonecrops (Sedum spp.) and houseleeks (Sempervivum spp.).',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Alpine meadows, slopes'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: May–Sep (1 brood)',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval hosts: Sedum, Sempervivum',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 62–95 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Häufig in Gärten mit Brennnesseln zu sehen',
-          'Frühe Flugzeit bereits ab März',
-          'Beim Sonnenbaden mit ausgebreiteten Flügeln gut zu beobachten',
+          'Active on warm, sunny days',
+          'Visits nectar-rich alpine flowers',
+        ],
+      ),
+      InfoCardData(
+        title: 'Conservation note',
+        leading: Icons.warning_amber_outlined,
+        bullets: [
+          'Sensitive to habitat changes',
+          'Local protection in parts of Europe',
         ],
       ),
     ],
   ),
 
-  // 5. Tagpfauenauge (Aglais io)
-  // Wingspan about 5 cm; pairs twice a year; lays 50–150 eggs; larvae feed
-  // exclusively on nettles; adults feed on nectar and pollen of various
-  // plants and overwinter as adults【185671522518812†L53-L100】.
-  'Tagpfauenauge': const ButterflyInfo(
+  // 6. Arcigera Flower Moth (Schinia arcigera)
+  // N. America; wingspan 22–25 mm; adults mid/late summer; larvae feed on several Symphyotrichum asters. Sources: Wikipedia; BugGuide; NatureServe. :contentReference[oaicite:5]{index=5}
+  'Arcigera Flower Moth': const ButterflyInfo(
     description:
-        """Das Tagpfauenauge (Aglais io) ist durch seine bunten Augenflecken auf den
-Flügeln unverwechselbar und dient als Schreckmuster gegenüber Fressfeinden.
-Es lebt in Parks, Gärten und an Waldrändern. Die Flügelspannweite beträgt
-etwa 5 cm.""",
+        'Schinia arcigera is a small noctuid moth of fields and open areas across much of North America. Adults fly in late summer to fall.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Das Weibchen legt in zwei Jahreszeiten
-50–150 Eier in Haufen an Brennnesseln. Die Raupen sind schwarz mit
-Dornen und leben gesellig, bevor sie sich verpuppen. Die erwachsenen
-Falter überwintern und können bei mildem Wetter bereits im Februar
-aktiv werden.""",
+        'Egg → caterpillar → pupa → adult. Larvae feed on asters, including Symphyotrichum laeve, S. ericoides and related species.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Parks, Gärten'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Feb–Okt'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Brennnessel'),
-      InfoChipData(icon: Icons.eco, label: 'Nektar: Distel, Klee, Buddleja'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: Fields, open areas'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Jul–Oct'),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval hosts: Symphyotrichum spp.',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 22–25 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Zwei Eiablagen pro Jahr mit 50–150 Eiern',
-          'Larven fressen ausschließlich Brennnesseln',
-          'Puppen hängen frei unter Blättern',
-          'Überwinterung als erwachsener Falter'
+          'Attracted to lights at night',
+          'Check late-season asters for larvae',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Widespread across N. America', 'Several named subspecies'],
+      ),
+    ],
+  ),
+
+  // 7. Atala (Eumaeus atala)
+  // SE Florida & Caribbean; wingspan ~38–51 mm; host is coontie (Zamia integrifolia & other cycads); toxic/aposematic; eggs often laid in clusters. Sources: UF/IFAS EDIS; Florida Wildflowers; Wikipedia. :contentReference[oaicite:6]{index=6}
+  'Atala': const ButterflyInfo(
+    description:
+        'The Atala is a small, velvet-black hairstreak with turquoise iridescence and bright red abdominal patches. It is aposematic due to toxins from its cycad host.',
+    reproduction:
+        'Egg → caterpillar → pupa → adult. Eggs are often laid in clusters on coontie (Zamia) leaves. Larvae feed gregariously on cycads.',
+    chips: [
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: Pine rocklands, hammocks',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Most of the year',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Coontie (Zamia)'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~38–51 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Häufig an Blüten wie Buddleja und Klee',
-          'Früh flugfähig durch Überwinterung als Falter',
-          'Bei Bedrohung werden Flügel geöffnet, um Augenflecken zu zeigen',
+          'Check ornamental cycads in suburbs',
+          'Adults often roost in small groups',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Recovered after host plant replanting',
+          'Warning colors deter predators',
         ],
       ),
     ],
   ),
 
-  // 6. Schwalbenschwanz (Papilio machaon)
-  // Largest of German butterflies with wingspan up to 9 cm; inhabits dry,
-  // warm areas; eggs laid near dill, fennel, carrot and other Umbelliferae;
-  // three generations; larvae pupate and some overwinter【994918144652453†L71-L99】.
-  'Schwalbenschwanz': const ButterflyInfo(
+  // 8. Atlas Moth (Attacus atlas)
+  // One of the world’s largest moths; adults do not feed (vestigial mouthparts); hosts include Citrus, Cinnamomum, Annona, etc.; wingspan up to ~24–26 cm. Sources: Wikipedia; AnimalDiversity; NHM; Reiman Butterfly; Britannica. :contentReference[oaicite:7]{index=7}
+  'Atlas Moth': const ButterflyInfo(
     description:
-        """Der Schwalbenschwanz (Papilio machaon) ist einer der größten
-Tagfalter Europas mit einer Flügelspannweite von bis zu 9 cm. Die
-gelb-schwarzen Flügel haben charakteristische „Schwalbenschwänze“ an
-den Hinterflügeln. Er bewohnt trockene, warme Wiesen, Magerrasen und
-Waldränder.""",
+        'The Atlas Moth is a huge silk moth with broad reddish-brown wings and “snake-head” forewing tips. Adults are nocturnal and short-lived.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Weibchen legen ihre Eier einzeln an
-Dill, Fenchel, Karotten und andere Doldenblütler. Die Raupen sind
-zunächst dunkel und stachelig, später leuchtend grün mit schwarzen
-Querbändern und orangefarbenen Punkten. Nach rund einem Monat
-verpuppen sie sich. Je nach Witterung entwickeln sich zwei bis drei
-Generationen; manche Puppen überwintern und schlüpfen im Frühling.""",
+        'Egg → caterpillar → pupa (cocoon) → adult. Adults have vestigial mouthparts and do not feed; energy comes from larval fat reserves.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Magerrasen, Äcker'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Apr–Sep'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Dill, Fenchel, Möhre'),
-      InfoChipData(icon: Icons.straighten, label: 'Spannweite: bis 9 cm'),
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: Tropical forests & gardens',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Mostly nocturnal',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval hosts: Citrus, Cinnamomum, Annona…',
+      ),
+      InfoChipData(
+        icon: Icons.info_outline,
+        label: 'Wingspan: up to ~24–26 cm',
+      ),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier einzeln an Doldenblütler (Dill, Fenchel, Möhre)',
-          'Raupe mit Osmeterium (gelb-orange Duftorgan) zur Abschreckung',
-          '2–3 Generationen, Puppen können überwintern',
-          'Falter schlüpfen ab April'
+          'Attracted to lights at night',
+          'Females often remain near cocoons',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
-        leading: Icons.visibility_outlined,
+        title: 'Notes',
+        leading: Icons.public,
         bullets: [
-          'Bevorzugt sonnige, windgeschützte Standorte',
-          'Raupen sind leuchtend grün mit schwarzen Ringen',
-          'Falter flattern majestätisch über Wiesen',
+          'Adults do not feed (vestigial proboscis)',
+          'Among the largest lepidopterans',
         ],
       ),
     ],
   ),
 
-  // 7. Kaisermantel (Argynnis paphia)
-  // Largest fritillary; females lay eggs on bark near violets; larvae
-  // overwinter on bark, feed on violets in spring and pupate early
-  // summer【587864077790355†L174-L182】.
-  'Kaisermantel': const ButterflyInfo(
+  // 9. Banded Orange Heliconian (Dryadula phaetusa)
+  // Lowland tropical fields/valleys; unpalatable (Müllerian mimicry); hosts Passiflora; adults take nectar & bird droppings; wingspan ~2.5–3.5 in (≈65–90 mm). Sources: Wikipedia; BAMONA; South Coast Botanic Garden. :contentReference[oaicite:8]{index=8}
+  'Banded Orange Heliconian': const ButterflyInfo(
     description:
-        """Der Kaisermantel (Argynnis paphia) ist der größte mitteleuropäische
-Perlmutterfalter. Die orangefarbenen Flügel tragen schwarze Punkte;
-Weibchen besitzen zusätzliche olivgrüne Streifen. Man findet ihn an
-sonnigen Waldwegen, Lichtungen und Waldrändern.""",
+        'Dryadula phaetusa is a bright orange heliconian with dark bands, common in lowland tropical fields and open areas; it is unpalatable to predators.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Weibchen legen ihre Eier im Sommer an
-Moos oder Baumrinde in der Nähe von Veilchenbeständen. Die Larven
-schlüpfen im Spätsommer, fressen nur die Eihülle und überwintern ohne
-Nahrung in der Rinde. Erst im Frühjahr kriechen sie zu den Veilchen,
-fressen deren Blätter, verpuppen sich im Juni und schlüpfen als
-Falter.""",
+        'Egg → caterpillar → pupa → adult. Eggs laid singly on passion-vines (Passiflora). Adults nectar and also visit bird droppings.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Lichtungen, Wälder'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Jun–Aug'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Veilchen'),
-      InfoChipData(icon: Icons.eco, label: 'Nektar: Distel, Brombeere'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: Lowland open areas'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round tropics',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Passiflora spp.'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~65–90 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier an Baumrinde nahe Veilchenbeständen',
-          'Larven überwintern ohne Nahrung in der Rinde',
-          'Nahrung im Frühjahr: Blätter von Veilchen',
-          'Puppenbildung im Frühsommer, Falter fliegen ab Juni'
+          'Perches in sunny clearings',
+          'Group roosting at night is common',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
-        leading: Icons.visibility_outlined,
+        title: 'Notes',
+        leading: Icons.public,
         bullets: [
-          'Bevorzugt sonnige Waldlichtungen mit violetten Blüten',
-          'Weibchen oft etwas größer und dunkler',
-          'Trinkt gern Mineralien aus feuchtem Boden',
+          'Part of an orange Müllerian mimicry ring',
+          'Range: Brazil → Mexico; vagrant to U.S.',
         ],
       ),
     ],
   ),
 
-  // 8. Landkärtchen (Araschnia levana)
-  // Eggs laid in stacks of 8–10 on undersides of nettles; larvae have
-  // spines and two head horns and live gregariously; adults have seasonal
-  // dimorphism; summer pupae overwinter【6431750989143†L164-L174】.
-  'Landkärtchen': const ButterflyInfo(
+  // 10. Banded Peacock (Anartia fatima)
+  // Subtropical open/disturbed habitats; South TX→Mexico→Central America; hosts Acanthaceae (e.g., Ruellia); wingspan ~6–7 cm. Sources: Wikipedia; BAMONA; BugGuide. :contentReference[oaicite:9]{index=9}
+  'Banded Peacock': const ButterflyInfo(
     description:
-        """Das Landkärtchen (Araschnia levana) zeigt eine ausgeprägte
-Jahreszeiten-Dimorphie: Die erste Generation im Frühling ist orange
-schwarz gefleckt, die Sommergeneration überwiegend schwarz mit weißen
-Bändern. Es besiedelt halbschattige Waldränder, Ufer und Feuchtwiesen.""",
+        'Anartia fatima is a brown nymphalid with bold pale bands. Common from Mexico through Central America; regularly reaches South Texas.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Die Weibchen legen 8–10 grüne Eier in
-kleinen Stapeln an die Unterseite von Brennnesselblättern. Die
-schwarzen, dornigen Raupen mit zwei Kopfhörnern leben zuerst
-gesellig. Nach der Verpuppung schlüpft die Sommergeneration bereits
-nach wenigen Wochen; die Herbstpuppen überwintern und schlüpfen
-erst im Frühjahr.""",
+        'Egg → caterpillar → pupa → adult. Eggs laid on low leaves/bracts of host plants in the Acanthaceae; larvae often use Ruellia.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: halbschattig'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Apr–Sep'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Brennnessel'),
-      InfoChipData(icon: Icons.color_lens, label: 'Frühling orange, Sommer schwarz'),
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: Open & second-growth areas',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (S. TX)',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval hosts: Acanthaceae (Ruellia)',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~60–70 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier in Gruppen von 8–10 an Brennnesselblättern',
-          'Raupen leben zunächst gesellig mit Dornen am Körper',
-          'Frühjahrs- und Sommergeneration unterscheidbar',
-          'Herbstpuppen überwintern, Falter im Frühjahr'
+          'Patrolling males in late morning',
+          'Often along riparian edges',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Common and non-toxic', 'Readily visits garden flowers'],
+      ),
+    ],
+  ),
+
+  // 11. Banded Tiger Moth (Apantesis vittata)
+  'Banded Tiger Moth': const ButterflyInfo(
+    description:
+        'The Banded Tiger Moth (Apantesis vittata) shows dark wings crossed by pale bands. It is a medium-sized moth found in North America. :contentReference[oaicite:0]{index=0}',
+    reproduction:
+        'Egg → caterpillar → pupa → adult. Larvae feed on various herbs (e.g. dandelions). Adults fly from spring through fall. :contentReference[oaicite:1]{index=1}',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: fields, lawns, meadows'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Oct'),
+      InfoChipData(icon: Icons.nature, label: 'Larval food: herbaceous plants'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~32–42 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Life cycle & behavior',
+        leading: Icons.change_circle_outlined,
+        bullets: [
+          'Larvae feed on low herbs such as dandelions',
+          'Overwinter as larvae or pupae in debris',
+          'Adults often active at night or drawn to lights',
+        ],
+      ),
+      InfoCardData(
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Halbschattige, feuchte Standorte wie Gräben und Waldränder aufsuchen',
-          'Farben der Flügel variieren je nach Generation',
-          'Raupen an Brennnesseln leicht zu finden',
+          'Use light traps at night',
+          'Search open areas near meadows or lawns',
         ],
       ),
     ],
   ),
 
-  // 9. Kleiner Kohlweißling (Pieris rapae)
-  // Eggs laid singly on the underside of leaves; larvae are green; pupate on
-  // host plant; two to three generations; overwinter as pupae; feed on
-  // cruciferous crops【204525633294783†L188-L247】.
-  'Kleiner Kohlweißling': const ButterflyInfo(
+  // 12. Becker’s White (likely Pieris beckerii or related)
+  'Beckers White': const ButterflyInfo(
     description:
-        """Der Kleine Kohlweißling (Pieris rapae) ist ein häufiger Falter in
-Gärten und Agrarlandschaften. Er besitzt weiße Flügel mit dunklen
-Spitzen und einen schlanken Körper. Die Art ist deutlich kleiner als
-der Große Kohlweißling.""",
+        'Becker’s White is a white butterfly in the Pieridae family, similar in appearance to other whites. (Exact species info may vary regionally.)',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Weibchen legen ihre 0,5 mm breiten Eier
-einzeln auf die Unterseiten von Kohlblättern und anderen
-Kreuzblütlern. Die grünen Raupen mit gelblichen Linien ernähren sich
-von den Blättern und verpuppen sich direkt an der Pflanze. Pro Jahr
-treten zwei bis drei Generationen auf; die Puppen überwintern.""",
+        'Egg → larva → pupa → adult. Larvae likely feed on plants in the mustard (Brassicaceae) family, similar to related “white” butterflies.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Gärten, Felder'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Mär–Okt'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Kohl, Radieschen'),
-      InfoChipData(icon: Icons.eco, label: 'Nektar: Klee, Löwenzahn'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: open areas, fields'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: spring to summer',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval food: Brassicaceae plants',
+      ),
+      InfoChipData(
+        icon: Icons.info_outline,
+        label: 'Wingspan: ~35–45 mm (typical white range)',
+      ),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Behavior & notes',
+        leading: Icons.info_outline,
         bullets: [
-          'Eier einzeln auf Blattunterseiten von Kohlgewächsen',
-          'Grüne Raupen mit gelblicher Linie',
-          'Verpuppung an der Futterpflanze',
-          '2–3 Generationen pro Jahr; Puppen überwintern'
+          'Likely multiple broods in warm climates',
+          'Often found near host plants in open terrain',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Häufig in Gemüsebeeten und auf Äckern',
-          'Unverkennbar durch die dunklen Flügelspitzen',
-          'Raupen können Schäden an Kohlpflanzen verursachen',
+          'Check mustard and cabbage family plants',
+          'Watch warm, sunny margins and fields',
         ],
       ),
     ],
   ),
 
-  // 10. Waldbrettspiel (Pararge aegeria)
-  // Eggs singly on grasses; larvae feed on grasses and overwinter; two
-  // generations from April to October; inhabits open woodlands and edges【776840310573213†L63-L78】.
-  'Waldbrettspiel': const ButterflyInfo(
+  // 13. Bird Cherry Ermine Moth (Yponomeuta evonymella)
+  'Bird Cherry Ermine Moth': const ButterflyInfo(
     description:
-        """Das Waldbrettspiel (Pararge aegeria) ist ein bräunlicher Falter mit
-gelben Augenflecken, der häufig in lichten Wäldern und an Waldrändern
-anzutreffen ist. Männchen sind territorial und sitzen auf Ästen oder
-am Boden, um vorbeifliegende Weibchen abzufangen.""",
+        'The Bird-cherry Ermine (Yponomeuta evonymella) is a small white moth with many black spots, often seen in clusters on its larval host plant, bird cherry (Prunus padus).',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Die Weibchen legen ihre Eier einzeln an
-Grashalme. Die grünen Raupen fressen verschiedene Süßgräser und
-überwintern als Raupe oder Puppe. Es gibt zwei Generationen pro Jahr;
-die Falter fliegen von April bis Oktober.""",
+        'Egg → larva → pupa → adult. Larvae feed in webs on bird cherry leaves; multiple larvae build communal webs.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: lichte Wälder'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Apr–Okt'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Gräser'),
-      InfoChipData(icon: Icons.flag, label: 'Territorialverhalten'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: hedgerows, wood edges'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: late spring to summer',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: bird cherry (Prunus padus)',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~18–25 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
+        title: 'Behavior & notes',
         leading: Icons.change_circle_outlined,
         bullets: [
-          'Eier einzeln an Grashalme gelegt',
-          'Grüne Raupen fressen verschiedenste Süßgräser',
-          'Überwinterung als Raupe oder Puppe',
-          'Zwei Generationen zwischen April und Oktober'
+          'Larvae live communally in silk webs',
+          'Pupation occurs within the web',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Männchen sitzen oft am Boden, um ihr Revier zu verteidigen',
-          'Gut an Waldrändern und in lichten Wäldern zu finden',
-          'Fliegt häufig knapp über dem Boden im Zickzackflug',
+          'Look for webbing on bird cherry trees',
+          'Adult moths rest on foliage nearby',
         ],
       ),
     ],
   ),
 
-  // 11. Großes Ochsenauge (Maniola jurtina)
-  // Eggs laid on mown meadows or grass stems; larvae feed on grasses; one
-  // generation; adults feed on a wide range of plants; widely distributed
-  //【658918225035511†L255-L276】.
-  'Großes Ochsenauge': const ButterflyInfo(
+  // 14. Black Hairstreak (Satyrium pruni)
+  'Black Hairstreak': const ButterflyInfo(
     description:
-        """Das Große Ochsenauge (Maniola jurtina) ist ein brauner Falter mit
-charakteristischem Augenfleck auf den Vorderflügeln. Es lebt in
-offenen, trockenen bis mäßig feuchten Lebensräumen wie Wiesen,
-Waldrändern, Parkanlagen und Böschungen. Das Weibchen ist heller als
-das Männchen.""",
+        'The Black Hairstreak (Satyrium pruni) is an elusive butterfly found in blackthorn scrub on heavy clay soils in parts of England and Europe. :contentReference[oaicite:2]{index=2}',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Nach der Paarung im Sommer lassen die
-Weibchen ihre Eier auf abgemähte Wiesen fallen oder befestigen sie an
-Grashalmen. Die schlüpfenden Raupen fressen verschiedene Gräser und
-überwintern. Im folgenden Frühjahr verpuppen sie sich, und ab Juni
-schlüpft eine Generation Falter.""",
+        'Egg → larva → pupa → adult. Larvae feed mostly on blackthorn (Prunus spinosa), occasionally other Prunus species. :contentReference[oaicite:3]{index=3}',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Wiesen, Ränder'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Jun–Sep'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Gräser'),
-      InfoChipData(icon: Icons.eco, label: 'Nektar: Distel, Klee'),
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: blackthorn scrub in woodland edges',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: mid-summer (often July)',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval food: blackthorn (Prunus spinosa)',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~37 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Behavior & notes',
+        leading: Icons.info_outline,
         bullets: [
-          'Eier auf abgemähte Wiesen oder Grashalme abgelegt',
-          'Raupen fressen verschiedene Grasarten',
-          'Überwinterung als Raupe',
-          'Eine Generation pro Jahr, Falter ab Juni'
+          'Adults spend much time in treetops feeding on honeydew',
+          'They make short flights to sunlit canopy edges',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Oft in größerer Zahl auf Wiesen anzutreffen',
-          'Fliegt in langsamem, wellenförmigem Flug',
-          'Augenfleck auf Vorderflügeln als Erkennungsmerkmal',
+          'Walk woodland rides with blackthorn thickets',
+          'Look for them midday in sunshine near tops of scrub',
         ],
       ),
     ],
   ),
 
-  // 12. Zitronenfalter (Gonepteryx rhamni)
-  // Overwinters as adult; larvae feed on buckthorn; early flying; one
-  // generation.  While citations exist for general info (plants and
-  // overwintering) but not all details, this entry summarises common
-  // knowledge.
-  'Zitronenfalter': const ButterflyInfo(
+  // 15. Blue Morpho (Morpho peleides or similar)
+  'Blue Morpho': const ButterflyInfo(
     description:
-        """Der Zitronenfalter (Gonepteryx rhamni) ist leicht an seiner
-zitronengelben Färbung der Männchen und dem grünen Farbton der Weibchen
-zu erkennen. Er gilt als einer der ersten Frühlingsboten, da er als
-überwinterter Falter bereits an den ersten warmen Tagen fliegt.""",
+        'The Blue Morpho (e.g. Morpho peleides) is known for its brilliant iridescent blue wings, seen in tropical forests of Central and South America. :contentReference[oaicite:4]{index=4}',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Die Eier werden einzeln an den
-Wirtspflanzen Kreuzdorn oder Faulbaum abgelegt. Die grünlichen Raupen
-fressen an den Blättern dieser Sträucher. Im Spätsommer verpuppen sich
-die Raupen; der Falter überwintert jedoch als fertiger Falter in
-Verstecken und fliegt im nächsten Frühling wieder.""",
+        'Egg → caterpillar → pupa → adult. Larvae feed on plants like legumes (Fabaceae). Adults feed on rotting fruit, tree sap or wet leaf litter. :contentReference[oaicite:5]{index=5}',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Auwälder, Hecken'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Feb–Okt'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Kreuzdorn'),
-      InfoChipData(icon: Icons.eco, label: 'Überwintert als Falter'),
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: tropical forest understory & edges',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: year-round in tropics',
+      ),
+      InfoChipData(
+        icon: Icons.eco,
+        label: 'Adult food: rotting fruit, sap, mud',
+      ),
+      InfoChipData(
+        icon: Icons.info_outline,
+        label: 'Wingspan: ~12–20 cm (5–8 in)',
+      ),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier einzeln an Kreuzdorn oder Faulbaum',
-          'Raupen fressen die Blätter der Wirtspflanze',
-          'Verpuppung im Spätsommer',
-          'Überwinterung als Falter in dichter Vegetation'
+          'Watch along forest trails and clearings',
+          'Look for the flash of blue in flight between leaves',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
-        leading: Icons.visibility_outlined,
+        title: 'Notes & defense',
+        leading: Icons.warning_amber_outlined,
         bullets: [
-          'Als einer der ersten Falter im Jahr zu sehen',
-          'Männchen sind zitronengelb, Weibchen grünlich',
-          'Übernachtet frei hängend in Hecken oder Büschen',
+          'Brown underside with eyespots helps camouflage',
+          'Blue flash in flight confuses predators',
         ],
       ),
     ],
   ),
 
-  // 13. C-Falter (Polygonia c-album)
-  // Two to three generations; eggs on nettles and hops; last generation
-  // hibernates.  Common in woodland edges and hedgerows.
-  'C‑Falter': const ButterflyInfo(
+  // 16. Blue Spotted Crow (Euploea midamus or Euploea spp.)
+  'Blue Spotted Crow': const ButterflyInfo(
     description:
-        """Der C‑Falter (Polygonia c‑album) verdankt seinen Namen dem
-weißlichen „C“ auf der Unterseite der Hinterflügel. Er besitzt stark
-gezackte Flügelränder und lebt an Waldrändern, in Gärten und
-Heckenlandschaften.""",
+        'The Blue-spotted Crow is a danaid butterfly of the genus Euploea, marked by blue spots on otherwise dark wings. It is found in Asia and Australasia.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Die Weibchen legen ihre Eier einzeln an
-Brennnesseln, Hopfen oder Ulmen ab. Die Raupen sind dunkel mit weißen
-Markierungen und Dornfortsätzen. Es entstehen zwei bis drei
-Generationen pro Jahr; die letzte überwintert als Falter in
-geschützten Verstecken.""",
+        'Egg → caterpillar → pupa → adult. Larvae feed on plants in the Apocynaceae family (e.g. milkweed relatives). Adults often fly in groups, sometimes engaging in mud-puddling.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Waldränder, Hecken'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Mär–Okt'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Brennnessel, Hopfen'),
-      InfoChipData(icon: Icons.eco, label: 'Überwintert als Falter'),
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: tropical forests & edges',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: year-round in tropics',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval hosts: Apocynaceae species',
+      ),
+      InfoChipData(
+        icon: Icons.info_outline,
+        label: 'Expected wingspan: ~70–90 mm (typical for Euploea “crow”)',
+      ),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Behavior & notes',
+        leading: Icons.info_outline,
         bullets: [
-          'Eier einzeln auf Brennnessel, Hopfen oder Ulme',
-          'Raupen besitzen Stacheln und weiße Flecken',
-          '2–3 Generationen pro Jahr',
-          'Herbstgeneration überwintert als Falter'
+          'Often participates in mud-puddling groups',
+          'Part of the large “crow/queen” group of milkweed butterflies',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Weibchen legen Eier bevorzugt an sonnigen Standorten',
-          'Die gezackten Flügelränder helfen bei der Tarnung',
-          'Überwintern oft in Holzstapeln oder Baumhöhlen',
+          'Look along sunny forest edges or paths',
+          'Observe low vegetation or puddles for congregations',
         ],
       ),
     ],
   ),
 
-  // 14. Großer Kohlweißling (Pieris brassicae)
-  // Two to three generations; eggs laid in clusters on crucifers; larvae
-  // feed on cabbage; overwinter as pupae.  Common in gardens and
-  // agricultural fields.
-  'Großer Kohlweißling': const ButterflyInfo(
+  // 17. Brookes Birdwing (Trogonoptera brookiana or Ornithoptera brookiana)
+  'Brookes Birdwing': const ButterflyInfo(
     description:
-        """Der Große Kohlweißling (Pieris brassicae) ist größer als sein
-kleiner Verwandter und hat weiße Flügel mit schwarzen Spitzen und
-zwei schwarzen Flecken auf den Vorderflügeln. Er ist ein typischer
-Schädling in Kohlgärten und Feldern.""",
+        'Brookes Birdwing (Ornithoptera / Trogonoptera brookiana) is a large, spectacular butterfly of the rainforests in Southeast Asia, bearing iridescent green or blue on black wings.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Die Weibchen legen ihre Eier in
-Gruppen von 20 bis 50 auf der Unterseite von Kohl- und anderen
-Kreuzblütlerblättern ab. Die gelblichen, geselligen Raupen fressen
-gemeinsam und können erhebliche Schäden verursachen. Nach der
-Verpuppung treten zwei bis drei Generationen pro Jahr auf; die
-Puppen überwintern.""",
+        'Egg → larva → pupa → adult. Larvae feed on pipe vine (Aristolochia) species; adults visit forest flowers and sip nectar or rotting fruit.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Gärten, Felder'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Apr–Sep'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Kohlgewächse'),
-      InfoChipData(icon: Icons.eco, label: 'Schädling im Garten'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: tropical rainforest'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: year-round in suitable climate',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval hosts: Aristolochia spp. (pipe vines)',
+      ),
+      InfoChipData(
+        icon: Icons.info_outline,
+        label: 'Wingspan: ~15–18 cm (varies with subspecies)',
+      ),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier in Gruppen an Blattunterseiten von Kreuzblütlern',
-          'Raupen fressen gesellig und verursachen Fraßschäden',
-          '2–3 Generationen pro Jahr',
-          'Puppen überwintern an Zäunen oder Pflanzen'
+          'Look around forest clearings and riverbanks',
+          'Often flies high—watch canopy gaps',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
-        leading: Icons.visibility_outlined,
+        title: 'Conservation note',
+        leading: Icons.warning_amber_outlined,
         bullets: [
-          'Größer und heller als der Kleine Kohlweißling',
-          'Raupen bilden häufig Trauben an den Futterpflanzen',
-          'Zur Bekämpfung können Netze und natürliche Feinde eingesetzt werden',
+          'Habitat loss is a threat in parts of its range',
+          'Highly prized by collectors, so protection needed',
         ],
       ),
     ],
   ),
 
-  // 15. Hauhechel-Bläuling (Polyommatus icarus)
-  // Eggs laid on alfalfa and clover; larvae feed on legumes; two to three
-  // generations; overwinters as caterpillar or pupa.  Common in
-  // meadows and grasslands.
-  'Hauhechel-Bläuling': const ButterflyInfo(
+  // 18. Brown Argus (Aricia agestis)
+  'Brown Argus': const ButterflyInfo(
     description:
-        """Der Hauhechel-Bläuling (Polyommatus icarus) ist ein kleiner Bläuling,
-dessen Männchen intensiv blau, die Weibchen bräunlich mit blauen
-Schatten sind. Er lebt auf Wiesen, Weiden und an Wegrändern.""",
+        'The Brown Argus (Aricia agestis) is a small brown butterfly with orange spots along wing margins, found in Europe and parts of Asia. :contentReference[oaicite:6]{index=6}',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Weibchen legen ihre Eier einzeln an
-Leguminosen wie Hauhechel, Luzerne und Klee ab. Die grünen Raupen
-werden oft von Ameisen gepflegt (Symbiose). Es gibt zwei bis drei
-Generationen, und die Art überwintert als Raupe oder Puppe.""",
+        'Egg → larva → pupa → adult. Larvae feed on rockrose (Helianthemum) and sometimes geraniums. One or more broods depending on climate.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Wiesen, Wegränder'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Mai–Sep'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Leguminosen'),
-      InfoChipData(icon: Icons.eco, label: 'Symbiose mit Ameisen'),
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: grassland, sunny slopes, limestone',
+      ),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Aug'),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Helianthemum, Geranium spp.',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~28–32 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier einzeln an Klee, Luzerne, Hauhechel',
-          'Raupen werden von Ameisen betreut (Schutz vor Feinden)',
-          '2–3 Generationen pro Jahr',
-          'Überwinterung als Raupe oder Puppe'
+          'Low to the ground—check among rockrose patches',
+          'Often seen fluttering near flowers close to soil',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
-        leading: Icons.visibility_outlined,
+        title: 'Conservation note',
+        leading: Icons.warning_amber_outlined,
         bullets: [
-          'Männchen leuchtend blau, Weibchen braun mit orangefarbenen Randflecken',
-          'Bevorzugt magere, sonnige Wiesen',
-          'Kleiner Falter mit flatterndem Flug',
+          'Sensitive to grazing and habitat degradation',
+          'Local declines where host plants lost',
         ],
       ),
     ],
   ),
 
-  // 16. Schachbrett (Melanargia galathea)
-  // Eggs dropped on grasses; larvae feed on various grasses; one
-  // generation; flight time June–Aug; overwinters as larva.  Common in dry
-  // meadows.
-  'Schachbrett': const ButterflyInfo(
+  // 19. Brown Siproeta (Siproeta epaphus or Siproeta stelenes “Brown”)
+  'Brown Siproeta': const ButterflyInfo(
     description:
-        """Das Schachbrett (Melanargia galathea) ist an seinem schwarz-weißen
-Schachmuster gut zu erkennen. Es bewohnt trockene Wiesen, Magerrasen
-und Böschungen. Männchen und Weibchen unterscheiden sich nur wenig.""",
+        'The Brown Siproeta is a neotropical butterfly (e.g. Siproeta stelenes, sometimes called the brown morph) with brown wings and subtler patterns than its relative the “Brown Siproeta”.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Die Weibchen lassen die Eier im Flug über
-Gräsern fallen. Die Raupen fressen verschiedene Süßgräser und
-überwintern als junge Raupe. Nach der Verpuppung im Frühsommer
-schlüpft eine Generation Falter im Juni und Juli.""",
+        'Egg → larva → pupa → adult. Larvae feed on plants in the Acanthaceae and other families; adults feed on rotting fruit, tree sap and flowers.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Magere Wiesen'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Jun–Aug'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Gräser'),
-      InfoChipData(icon: Icons.pattern, label: 'Schwarz-weißes Muster'),
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: tropical open forest, edges',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: year-round in tropics',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval hosts: Acanthaceae & related plants',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~70–90 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier werden im Flug über Wiesen abgelegt',
-          'Raupen fressen verschiedenste Gräser',
-          'Überwinterung als junge Raupe',
-          'Eine Generation im Frühsommer'
+          'Search near fruiting trees or fallen fruit',
+          'Often rest on shaded understory leaves',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
-        leading: Icons.visibility_outlined,
+        title: 'Notes',
+        leading: Icons.info_outline,
         bullets: [
-          'Oft in Trockenrasen und kalkreichen Wiesen zu finden',
-          'Schachbrettmuster sorgt für gute Tarnung',
-          'Falter sitzen gerne mit geschlossenen Flügeln auf Blüten',
+          'Often overlooked due to duller coloration',
+          'Related to the more common Siproeta butterfly forms',
         ],
       ),
     ],
   ),
 
-  // 17. Trauermantel (Nymphalis antiopa)
-  // Eggs on willow and birch; larvae feed on willow; adults feed on tree sap
-  // and fruit; one generation; hibernates as adult.  Known for its dark
-  // wings with blue spots.
-  'Trauermantel': const ButterflyInfo(
+  // 20. Cabbage White (Pieris rapae)
+  'Cabbage White': const ButterflyInfo(
     description:
-        """Der Trauermantel (Nymphalis antiopa) ist ein großer, dunkelbrauner
-Falter mit cremefarbenem Rand und blauem Punktmuster. Er bewohnt
-Laubwälder, Parks und Flusstäler und ist in Deutschland relativ
-selten.""",
+        'The Cabbage White (Pieris rapae), also called the Small White, is a familiar white butterfly with black wing tips and black spots. :contentReference[oaicite:7]{index=7}',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Im Frühjahr legen Weibchen ihre Eier in
-größeren Gelegen an die Zweige von Weiden oder Birken. Die Raupen
-sind schwarz mit roten Flecken und fressen in Gruppen an den jungen
-Blättern. Nach der Verpuppung schlüpft eine Generation, die als
-Falter überwintert.""",
+        'Egg → caterpillar → pupa → adult. Eggs laid singly on leaves of mustard family (Brassicaceae). Several generations per year in warm regions. :contentReference[oaicite:8]{index=8}',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Laubwald, Auen'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Jun–Sep'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Weide, Birke'),
-      InfoChipData(icon: Icons.eco, label: 'Überwintert als Falter'),
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: gardens, fields, open areas',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Apr–Oct (multiple broods)',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval food: cabbages & mustard family',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ~32–47 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Behavior & notes',
+        leading: Icons.info_outline,
         bullets: [
-          'Eier in Gelegen an Weiden- und Birkenzweigen',
-          'Raupen leben gesellig auf jungen Blättern',
-          'Eine Generation pro Jahr',
-          'Überwinterung als erwachsener Falter'
+          'Very common, often a pest in cabbage crops',
+          'Strong flier that expands its range easily',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Seltener Falter, vor allem in nordischen Gebieten',
-          'Besucht gern Baumsaft und Fallobst',
-          'Großer Falter mit langsamen, segelnden Flug',
+          'Look in gardens and fields with brassica plants',
+          'Easy to see fluttering in sunny open areas',
+        ],
+      ),
+    ],
+  ),
+  // 21. Cairns Birdwing (Ornithoptera euphorion)
+  // Australia’s largest butterfly; tropical rainforests of NE Queensland; host: Aristolochia tagala; wingspan ♂ up to 15 cm.
+  'Cairns Birdwing': const ButterflyInfo(
+    description:
+        'The Cairns Birdwing is a striking Australian swallowtail—males shimmer emerald-green and gold, females are larger and black with white patches. Found in tropical rainforests of Queensland.',
+    reproduction:
+        'Egg → caterpillar → pupa → adult. Eggs laid on native Dutchman’s pipe (Aristolochia tagala). One of the few species where females choose shaded vines.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Rainforest edges'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Aristolochia tagala',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: ♂ ~15 cm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Look for slow-gliding adults above canopy gaps',
+          'Often seen near flowering vines',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Australia’s largest butterfly',
+          'Protected species in Queensland',
         ],
       ),
     ],
   ),
 
-  // 18. Großer Perlmutterfalter (Speyeria aglaja)
-  // Eggs laid near violets; larvae feed on violets; one generation; flight
-  // June–Aug; adults feed on thistle, knapweed.  This entry summarises
-  // widely known information about the species.
-  'Großer Perlmutterfalter': const ButterflyInfo(
+  // 22. Chalk Hill Blue (Polyommatus coridon)
+  // Europe; chalk grasslands; host: horseshoe vetch; 1 brood Jul–Sep; wingspan 30–36 mm.
+  'Chalk Hill Blue': const ButterflyInfo(
     description:
-        """Der Große Perlmutterfalter (Speyeria aglaja) besitzt orangefarbene
-Flügel mit schwarzen Punkten und einer Reihen weißer Flecken auf der
-Unterseite. Er lebt auf mageren Wiesen, Heideflächen und Waldrändern.""",
+        'A pale silvery-blue butterfly common on sunny chalk and limestone downs across Europe. Males are brighter than the brown-tinted females.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Die Eier werden einzeln in der Nähe von
-Veilchenbeständen abgelegt. Die Raupen schlüpfen, überwintern jedoch
-ohne zu fressen und beginnen erst im Frühjahr mit der Nahrungsaufnahme
-an Veilchenblättern. Nach der Verpuppung im Frühsommer erscheint eine
-Generation im Juni und Juli.""",
+        'Eggs laid on horseshoe vetch; overwinters as a tiny larva; one summer generation per year.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Wiesen, Heiden'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Jun–Aug'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Veilchen'),
-      InfoChipData(icon: Icons.eco, label: 'Nektar: Distel, Kratzdistel'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: Chalk grassland'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Jul–Sep'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Horseshoe vetch'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 30–36 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Prefers short-grazed slopes', 'Males patrol low over grass'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['One brood yearly', 'Highly local but abundant on sites'],
+      ),
+    ],
+  ),
+
+  // 23. Chequered Skipper (Carterocephalus palaemon)
+  // Moist meadows & woodland clearings; larvae feed on grasses (Molinia); single spring brood; wingspan ~28–34 mm.
+  'Chequered Skipper': const ButterflyInfo(
+    description:
+        'A small, fast-flying skipper with orange-brown chequered wings. Found in damp grassy woodland clearings and meadows.',
+    reproduction:
+        'Egg → caterpillar → pupa → adult. Larvae feed on purple moor-grass (Molinia). One generation per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Damp woodland clearings'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Jun'),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Moor-grass (Molinia)',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 28–34 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier einzeln in der Nähe von Veilchen',
-          'Larven schlüpfen und überwintern ohne Nahrung',
-          'Nahrung im Frühjahr: Blätter von Veilchen',
-          'Eine Generation pro Jahr, Falter ab Juni'
+          'Active on sunny mornings',
+          'Often rests with open wings on grass stems',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
-        leading: Icons.visibility_outlined,
+        title: 'Notes',
+        leading: Icons.public,
         bullets: [
-          'Bevorzugt trockenwarme Wiesen mit Veilchen',
-          'Schwer zu unterscheiden von anderen Perlmutterfaltern',
-          'Falter besuchen Distel- und Skabiosenblüten',
+          'Locally rare and reintroduced in England',
+          'Adults live only about a week',
         ],
       ),
     ],
   ),
 
-  // 19. Pflaumen-Zipfelfalter (Thecla betulae)
-  // Eggs laid on blackthorn; larvae feed on blackthorn; flight Aug–Sept; one
-  // generation.  The species overwinters as an egg.
-  'Pflaumen-Zipfelfalter': const ButterflyInfo(
+  // 24. Chestnut (Conistra vaccinii)
+  // Common winter moth of Europe; adults fly Oct–Apr; larvae feed on broadleaf trees; wingspan ~30–40 mm.
+  'Chestnut': const ButterflyInfo(
     description:
-        """Der Pflaumen-Zipfelfalter (Thecla betulae) ist ein kleiner Falter
-mit orangebraunen Flügeloberseiten bei den Männchen und orangefarbenen
-Fleck auf den Hinterflügeln der Weibchen. Er bewohnt Hecken,
-Waldränder und Obstgärten.""",
+        'The Chestnut is a medium-sized brown moth flying through the cold months when few others are active.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Weibchen legen ihre Eier im Spätsommer an
-die jungen Zweige von Schlehen (Schwarzdorn) und Pflaumen. Die Eier
-überwintern. Im Frühjahr schlüpfen die Raupen und fressen an den
-Knospen und Blättern der Schlehen. Nach der Verpuppung erscheint eine
-Generation im Hochsommer.""",
+        'Eggs overwinter on twigs; caterpillars feed in spring on oak, birch and fruit trees; adults emerge in autumn.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Hecken, Obstgärten'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Aug–Sep'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Schlehe'),
-      InfoChipData(icon: Icons.eco, label: 'Überwintert als Ei'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: Woodlands, gardens'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Oct–Apr'),
+      InfoChipData(icon: Icons.nature, label: 'Larval hosts: Deciduous trees'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 30–40 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier im Spätsommer an Schlehen- und Pflaumenzweigen',
-          'Überwinterung als Ei',
-          'Raupen fressen im Frühjahr an Knospen und Blättern',
-          'Eine Generation pro Jahr'
+          'Attracted to light traps in winter',
+          'Can fly on mild nights',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['One of few moths active in winter', 'Common across Europe'],
+      ),
+    ],
+  ),
+
+  // 25. Cinnabar Moth (Tyria jacobaeae)
+  // Distinctive black-and-red day-flying moth; larvae on ragwort; wingspan 32–42 mm.
+  'Cinnabar Moth': const ButterflyInfo(
+    description:
+        'A bright red-and-black day-flying moth often seen fluttering over grassy fields and roadside verges.',
+    reproduction:
+        'Eggs laid on ragwort; black-and-orange caterpillars absorb plant toxins making them distasteful to birds.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, waste ground'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Aug'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Ragwort'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 32–42 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
         bullets: [
-          'Fliegt spät im Jahr (August–September)',
-          'Männchen sitzen oft auf Blattoberseiten zum Sonnen',
-          'Weibchen legen Eier vorzugsweise an gut besonnten Zweigen',
+          'Easily spotted by red wings in daylight',
+          'Look for striped caterpillars on ragwort',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Toxic to predators', 'Used in ragwort biological control'],
+      ),
+    ],
+  ),
+
+  // 26. Clearwing Moth (Family Sesiidae, e.g. Synanthedon tipuliformis)
+  // Transparent-winged day-flying moths; mimic wasps; larvae in woody stems; wingspan 15–30 mm.
+  'Clearwing Moth': const ButterflyInfo(
+    description:
+        'Clearwing moths are small, wasp-mimicking day-flyers with transparent wings. They hover at flowers like bees.',
+    reproduction:
+        'Larvae tunnel in stems or roots of trees and shrubs depending on species. Adults live briefly in summer.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, wood edges'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Aug'),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Various woody plants',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 15–30 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Attracted by pheromone lures',
+          'Often mistaken for small wasps',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Includes currant, hornet & six-belted clearwings',
+          'Safe mimicry deters predators',
         ],
       ),
     ],
   ),
 
-  // 20. Kleiner Schillerfalter (Apatura ilia)
-  // Eggs laid singly on poplars; larvae feed on poplar leaves; two
-  // generations; males show iridescent blue sheen; overwinters as larva.
-  'Kleiner Schillerfalter': const ButterflyInfo(
+  // 27. Cleopatra (Gonepteryx cleopatra)
+  // Mediterranean cousin of the Brimstone; yellow-orange males, pale females; host: Rhamnus species; wingspan 55–70 mm.
+  'Cleopatra': const ButterflyInfo(
     description:
-        """Der Kleine Schillerfalter (Apatura ilia) besitzt eine schillernde
-bläuliche Färbung, die vor allem bei den Männchen im Sonnenlicht
-aufblitzt. Er kommt in Auenwäldern, an Flussufern und in parkähnlichen
-Landschaften vor.""",
+        'The Cleopatra is a bright yellow-orange butterfly resembling the Brimstone. Common around the Mediterranean.',
     reproduction:
-        """Ei → Raupe → Puppe → Falter. Die Weibchen legen ihre Eier einzeln an
-Pappel- und Weidenblättern ab. Die Raupen sind grün und haben zwei
-charakteristische Hörner am Kopf. Nach der Überwinterung als Raupe
-verpuppen sie sich im Frühjahr. Es gibt zwei Generationen im Juni und
-August.""",
+        'Eggs laid on buckthorn shrubs; one generation per year; adults hibernate over winter.',
     chips: [
-      InfoChipData(icon: Icons.park, label: 'Lebensraum: Auwald, Flussufer'),
-      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flugsaison: Jun–Aug'),
-      InfoChipData(icon: Icons.nature, label: 'Raupenfutter: Pappel, Weide'),
-      InfoChipData(icon: Icons.brightness_4, label: 'Bläulicher Schimmer'),
+      InfoChipData(icon: Icons.park, label: 'Habitat: Scrub, woodland edges'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Sep'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Rhamnus spp.'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 55–70 mm'),
     ],
     cards: [
       InfoCardData(
-        title: 'Vermehrung',
-        leading: Icons.change_circle_outlined,
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
         bullets: [
-          'Eier einzeln an Pappel- und Weidenblättern',
-          'Larven überwintern, sind grün mit Hörnern am Kopf',
-          'Zwei Generationen pro Jahr (Juni und August)',
-          'Falter saugen an Baumsaft und überreifen Früchten'
+          'Flies strongly in sunny woodland',
+          'Often confused with Brimstone',
         ],
       ),
       InfoCardData(
-        title: 'Hinweise zur Beobachtung',
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Overwinters as adult', 'Common around Mediterranean basin'],
+      ),
+    ],
+  ),
+
+  // 28. Clodius Parnassian (Parnassius clodius)
+  // Western N. America; mountain meadows; host: Dicentra; 1 brood Jun–Aug; wingspan 55–75 mm.
+  'Clodius Parnassian': const ButterflyInfo(
+    description:
+        'A white mountain butterfly with translucent wings and red or yellow spots. Found from British Columbia to California.',
+    reproduction:
+        'Eggs laid near host bleeding heart (Dicentra). One annual brood; overwinters as egg.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Mountain meadows'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Jun–Aug'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Dicentra species'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 55–75 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
         leading: Icons.visibility_outlined,
+        bullets: ['Flies in sunny alpine meadows', 'Often perches on rocks'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
         bullets: [
-          'Männchen schillern intensiv blau im Sonnenlicht',
-          'Beobachtung oft in Kronen von Pappeln und Weiden',
-          'Falter werden von Aas und Exkrementen angelockt',
+          'Closely related to Apollo group',
+          'Sensitive to habitat loss',
         ],
       ),
     ],
   ),
+
+  // 29. Clouded Sulphur (Colias philodice)
+  // North America; yellow-orange butterfly; hosts clovers and alfalfa; several broods; wingspan 32–57 mm.
+  'Clouded Sulphur': const ButterflyInfo(
+    description:
+        'A common yellow butterfly of fields and roadsides across North America, often seen with wings partly open while feeding.',
+    reproduction:
+        'Egg → caterpillar → pupa → adult. Larvae feed on clovers and alfalfa; multiple generations per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, roadsides'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Spring–Autumn',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Clovers, alfalfa'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 32–57 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Common in sunny open areas', 'Often mud-puddles in groups'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Several broods per year',
+          'One of North America’s most widespread butterflies',
+        ],
+      ),
+    ],
+  ),
+
+  // 30. Comet Moth (Argema mittrei)
+  // Madagascar endemic; huge yellow wings with long tails; host: Tambourissa trees; adults do not feed; wingspan up to 20 cm.
+  'Comet Moth': const ButterflyInfo(
+    description:
+        'The Comet Moth, or Madagascan Moon Moth, is a spectacular bright yellow silk moth with long trailing tails on its hindwings.',
+    reproduction:
+        'Egg → caterpillar → cocoon → adult. Caterpillars feed on Tambourissa leaves; adults have no mouthparts and live only a few days.',
+    chips: [
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: Rainforests of Madagascar',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Mostly nocturnal',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Tambourissa trees'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: up to 20 cm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Rare in wild; often bred in captivity',
+          'Attracted to light at night',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Endemic to Madagascar',
+          'Adults do not feed; short lifespan',
+        ],
+      ),
+    ],
+  ),
+
+  // 31. Common Banded Awl (Hasora chromus)
+// Widespread in South & Southeast Asia; dark brown skipper with white band; host: legumes; wingspan 45–55 mm.
+'Common Banded Awl': const ButterflyInfo(
+  description:
+      'A fast-flying dark brown skipper with a distinct white band across its hindwings. Common in gardens and forests of South Asia.',
+  reproduction:
+      'Egg → caterpillar → pupa → adult. Eggs laid on leguminous plants; larvae rest in leaf shelters during the day.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, gardens'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–55 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Active at dawn and dusk',
+        'Rests under leaves in daytime'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Common in South Asia',
+        'Strong and rapid flyer'
+      ],
+    ),
+  ],
+),
+
+// 32. Common Wood-Nymph (Cercyonis pegala)
+// North America; brown butterfly with eyespots; host: grasses; wingspan 45–75 mm.
+'Common Wood-Nymph': const ButterflyInfo(
+  description:
+      'A soft brown butterfly with eye spots on its forewings, found in fields and open woods throughout North America.',
+  reproduction:
+      'Eggs laid on grasses; larvae overwinter and resume feeding in spring before pupating.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Fields, open woods'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Jun–Sep'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Grasses'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–75 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Flies close to the ground',
+        'Often perches on tall grass stems'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Variable eyespot patterns',
+        'One brood per year in most regions'
+      ],
+    ),
+  ],
+),
+
+// 33. Copper Tail (Lycaenidae family, e.g. Cigaritis vulcanus)
+// Africa & Asia; small orange with tail tips; host: legumes, Zizyphus; wingspan 25–35 mm.
+'Copper Tail': const ButterflyInfo(
+  description:
+      'A small orange-brown butterfly with fine tail extensions and black markings. Common in dry open habitats.',
+  reproduction:
+      'Eggs laid on legumes or Zizyphus shrubs; larvae often tended by ants for protection.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Dry scrub, savanna'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes, Zizyphus'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 25–35 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Often perches on low shrubs',
+        'Adults visit small flowers for nectar'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Common lycaenid butterfly',
+        'Larvae have mutualistic ants'
+      ],
+    ),
+  ],
+),
+
+// 34. Crescent (Phyciodes tharos - Pearl Crescent)
+// N. America; orange patterned butterfly; host asters; wingspan 30–40 mm.
+'Crescent': const ButterflyInfo(
+  description:
+      'The Pearl Crescent is a small orange-and-black butterfly common in sunny meadows and roadsides across North America.',
+  reproduction:
+      'Eggs laid in clusters on asters; multiple generations per year.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, fields'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Oct'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Asters'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 30–40 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Flies close to the ground',
+        'Can be abundant in open areas'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Several broods yearly',
+        'Easily confused with similar crescents'
+      ],
+    ),
+  ],
+),
+
+// 35. Crimson Patch (Chlosyne janais)
+// Central America to S Texas; red and black wings; host: acanthus family; wingspan 45–55 mm.
+'Crimson Patch': const ButterflyInfo(
+  description:
+      'A bright red-and-black butterfly found in tropical regions from Mexico to South Texas, often near streams.',
+  reproduction:
+      'Eggs laid on Acanthaceae plants like Justicia; larvae are spiny and gregarious.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, streams'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Acanthaceae'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–55 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Perches on low vegetation',
+        'Often sunning with open wings'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Named for its bright red “patches”',
+        'Occasional visitor to southern U.S.'
+      ],
+    ),
+  ],
+),
+
+// 36. Danaid Eggfly (Hypolimnas misippus)
+// Tropical butterfly; mimic of monarchs; host: Portulaca, Sida; wingspan 70–85 mm.
+'Danaid Eggfly': const ButterflyInfo(
+  description:
+      'A striking butterfly with dark brown wings and white spots, the female mimics monarchs and other toxic species.',
+  reproduction:
+      'Eggs laid on Portulaca and Sida plants; larvae black with orange spines; several generations per year.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, open woodland'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Portulaca, Sida'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 70–85 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Common in sunny clearings',
+        'Males defend territories'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Females mimic toxic monarchs',
+        'Widespread across tropics'
+      ],
+    ),
+  ],
+),
+
+// 37. Eastern Comma (Polygonia comma)
+// N. America; orange wings with ragged edges; host: nettle, elm; wingspan 45–60 mm.
+'Eastern Comma': const ButterflyInfo(
+  description:
+      'The Eastern Comma is an orange butterfly with irregular wing edges and a small silver comma mark on the underside.',
+  reproduction:
+      'Eggs laid on nettles, elms, and hops; two broods per year; adults hibernate over winter.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, gardens'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Oct'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Elm, Nettle, Hop'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–60 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Often basks on tree trunks',
+        'Underside provides excellent camouflage'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Overwinters as adult butterfly',
+        'Common across eastern North America'
+      ],
+    ),
+  ],
+),
+
+// 38. Eastern Dapple White (Euchloe ausonides)
+// Western North America; white butterfly with green marbling; host: mustards; wingspan 35–50 mm.
+'Eastern Dapple White': const ButterflyInfo(
+  description:
+      'A white butterfly with greenish marbled underwings, found in open fields and sagebrush habitats.',
+  reproduction:
+      'Eggs laid singly on mustards; larvae blend with green stems; one or two broods yearly.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Open fields, foothills'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Aug'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Mustards'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 35–50 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Flies close to the ground',
+        'Best seen in spring bloom'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Camouflaged underside pattern',
+        'Common in western U.S. prairies'
+      ],
+    ),
+  ],
+),
+
+// 39. Eastern Pine Elfin (Callophrys niphon)
+// Small hairstreak of pine forests; wingspan 22–28 mm; host: pines.
+'Eastern Pine Elfin': const ButterflyInfo(
+  description:
+      'A tiny brown butterfly with a faint tail and pale line, found in pine forests of eastern North America.',
+  reproduction:
+      'Eggs laid on pine needles; larvae feed on new growth; one early-spring generation.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Pine forests'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Jun'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Pines'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 22–28 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Perches on pine twigs',
+        'Tiny and quick in early spring'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'One of the earliest spring hairstreaks',
+        'Single brood per year'
+      ],
+    ),
+  ],
+),
+
+// 40. Elbowed Pierrot (Caleta elna)
+// South & Southeast Asia; small black-and-white butterfly; host: Zizyphus; wingspan 25–35 mm.
+'Elbowed Pierrot': const ButterflyInfo(
+  description:
+      'A tiny black-and-white butterfly with angular hindwing bands, found fluttering close to the ground in open woods.',
+  reproduction:
+      'Eggs laid on Zizyphus leaves; larvae green with short hairs; several broods per year.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Scrub, forest edges'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Zizyphus spp.'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 25–35 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Flutters low near paths',
+        'Often settles with wings closed'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Common in Asia’s woodlands',
+        'Fast, erratic flyer'
+      ],
+    ),
+  ],
+),
+
+// 41. Emperor Gum Moth (Opodiphthera eucalypti)
+// Large Australian silk moth; wingspan up to 15 cm; host: Eucalyptus.
+'Emperor Gum Moth': const ButterflyInfo(
+  description:
+      'A large Australian silk moth with eye spots on all four wings. Adults do not feed and live only a few days.',
+  reproduction:
+      'Egg → caterpillar → cocoon → adult. Larvae feed on Eucalyptus leaves; pupate in tough cocoons.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Eucalyptus woodland'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Late summer–autumn'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Eucalyptus'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: up to 15 cm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Attracted to lights at night',
+        'Large and slow-flying moth'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Adults do not feed',
+        'Iconic Australian silk moth'
+      ],
+    ),
+  ],
+),
+
+// 42. Garden Tiger Moth (Arctia caja)
+// Europe & N. America; hairy caterpillar “woolly bear”; wingspan 45–65 mm.
+'Garden Tiger Moth': const ButterflyInfo(
+  description:
+      'A colorful moth with brown-and-white forewings and bright orange hindwings with blue spots. Common in temperate regions.',
+  reproduction:
+      'Eggs laid on low plants; larvae are “woolly bears” feeding on dandelion and dock.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, gardens'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Jun–Aug'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Dandelion, Dock'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–65 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Often seen at lights',
+        'Larvae overwinter in leaf litter'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Aposematic coloration deters predators',
+        'Declining in some regions'
+      ],
+    ),
+  ],
+),
+
+// 43. Giant Leopard Moth (Hypercompe scribonia)
+// Eastern U.S.; white wings with black spots; wingspan 50–80 mm.
+'Giant Leopard Moth': const ButterflyInfo(
+  description:
+      'A beautiful white moth with bold black spots, found in gardens and woodlands of eastern North America.',
+  reproduction:
+      'Eggs laid on low plants; black spiny caterpillars feed on broadleaf weeds.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, woodland edges'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Sep'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Dandelion, Plantain'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 50–80 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Attracted to lights at night',
+        'Caterpillars curl when disturbed'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Found across eastern U.S.',
+        'Distinctive white-and-black pattern'
+      ],
+    ),
+  ],
+),
+
+// 44. Glittering Sapphire (Iolaus diametra)
+// Africa; small, bright blue hairstreak; host: mistletoe; wingspan 30–35 mm.
+'Glittering Sapphire': const ButterflyInfo(
+  description:
+      'A tiny African butterfly with brilliant metallic-blue wings and short tails. Common in open woodlands and near mistletoe plants.',
+  reproduction:
+      'Eggs laid on mistletoe; larvae feed within leaves; several broods per year.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Woodland, savanna'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Mistletoe'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 30–35 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Often perches high near host trees',
+        'Best seen in morning sunlight'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Shimmering blue coloration varies with light',
+        'Common across sub-Saharan Africa'
+      ],
+    ),
+  ],
+),
+
+// 45. Gold Banded (Autochton cellus - Gold-banded Skipper)
+// Americas; large brown skipper with golden band; host: legumes; wingspan 45–65 mm.
+'Gold Banded': const ButterflyInfo(
+  description:
+      'A robust brown skipper with a bright golden diagonal band across each forewing. Found from the southern U.S. through Central America.',
+  reproduction:
+      'Eggs laid on legumes such as wisteria and false indigo; caterpillars live in folded leaves.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Woodland edges, gardens'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Oct'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–65 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Flies fast and low in shaded areas',
+        'Often rests on leaves with wings spread'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Common in the southern U.S. and tropics',
+        'Recognizable by its bright golden stripe'
+      ],
+    ),
+  ],
+),
+
+// 46. Great Eggfly (Hypolimnas bolina)
+// Asia-Pacific region; large butterfly; males black with violet sheen; host: Portulaca, Sida; wingspan 70–85 mm.
+'Great Eggfly': const ButterflyInfo(
+  description:
+      'A large tropical butterfly. Males are black with vivid purple-blue spots, while females mimic other species for protection.',
+  reproduction:
+      'Eggs laid on Portulaca and Sida plants; larvae black with orange spines; multiple generations yearly.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, forest edges'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Portulaca, Sida'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 70–85 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Common in sunny open areas',
+        'Males defend territories'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Female mimics toxic species',
+        'Widespread across Asia and Pacific islands'
+      ],
+    ),
+  ],
+),
+
+// 47. Great Jay (Graphium evemon)
+// Southeast Asia; swallowtail with blue bands; host: citrus and laurels; wingspan 80–100 mm.
+'Great Jay': const ButterflyInfo(
+  description:
+      'A beautiful swallowtail butterfly with blue and black bands. Found in tropical forests of Southeast Asia.',
+  reproduction:
+      'Eggs laid on laurels and citrus trees; larvae green and smooth; several broods in warm regions.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Tropical forests'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Citrus, Lauraceae'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 80–100 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Often seen feeding at flowers',
+        'Swift, gliding flight in forest clearings'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'One of several “Jay” species with blue bands',
+        'Prefers humid lowland forests'
+      ],
+    ),
+  ],
+),
+
+// 48. Green-celled Cattleheart (Parides childrenae)
+// Central & South America; black butterfly with red spots and green patch; host: Aristolochia; wingspan 70–90 mm.
+'Green Celled Cattleheart': const ButterflyInfo(
+  description:
+      'A striking black butterfly with a greenish iridescent patch on its wings and red spots on the hindwings. Common in tropical forests.',
+  reproduction:
+      'Eggs laid on pipevines (Aristolochia); larvae toxic due to host plant chemicals.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Tropical forests'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Aristolochia vines'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 70–90 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Common near forest streams',
+        'Slow and graceful flight pattern'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Unpalatable to predators',
+        'Part of the swallowtail family'
+      ],
+    ),
+  ],
+),
+
+// 49. Green Hairstreak (Callophrys rubi)
+// Europe & Asia; small green butterfly; host: gorse, buckthorn; wingspan 26–34 mm.
+'Green Hairstreak': const ButterflyInfo(
+  description:
+      'A small butterfly with brilliant green underwings and brown upperwings. Common in heathland and scrub areas.',
+  reproduction:
+      'Eggs laid on gorse, broom, and buckthorn; one generation per year; overwinters as pupa.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Heathland, scrub'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Jun'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Gorse, Buckthorn'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 26–34 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Perches on shrubs in sunny spots',
+        'Always rests with wings closed'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Only green butterfly in Europe',
+        'One brood per year'
+      ],
+    ),
+  ],
+),
+
+// 50. Grey Hairstreak (Strymon melinus)
+// Americas; gray butterfly with orange spots and tail; host: legumes and mallows; wingspan 25–38 mm.
+'Grey Hairstreak': const ButterflyInfo(
+  description:
+      'A small gray butterfly with delicate tails and bright orange spots near the hindwing edge. Found across the Americas.',
+  reproduction:
+      'Eggs laid on many host plants including mallows and legumes; multiple generations per year.',
+  chips: [
+    InfoChipData(icon: Icons.park, label: 'Habitat: Fields, gardens'),
+    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Oct'),
+    InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes, Mallows'),
+    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 25–38 mm'),
+  ],
+  cards: [
+    InfoCardData(
+      title: 'Observation tips',
+      leading: Icons.visibility_outlined,
+      bullets: [
+        'Flutters around flowers and shrubs',
+        'Common in sunny, open habitats'
+      ],
+    ),
+    InfoCardData(
+      title: 'Notes',
+      leading: Icons.public,
+      bullets: [
+        'Very widespread in the Americas',
+        'One of the most adaptable hairstreaks'
+      ],
+    ),
+  ],
+),
+
 };

@@ -73,12 +73,6 @@ class _MyButterfliesPageState extends State<MyButterfliesPage> {
   void _openUpload(UserUpload it) {
     // ID des Falters aus dem Upload-Modell holen (anpassen, falls Feld anders heißt)
     final id = it.butterfly?.id ?? it.butterflyId;
-    if (id == null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text("Keine Butterfly-ID vorhanden.")),
-      );
-      return;
-    }
     Navigator.push(
       context,
       MaterialPageRoute(
