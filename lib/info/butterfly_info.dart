@@ -1160,663 +1160,1343 @@ final Map<String, ButterflyInfo> butterflyInfoMap = {
   ),
 
   // 31. Common Banded Awl (Hasora chromus)
-// Widespread in South & Southeast Asia; dark brown skipper with white band; host: legumes; wingspan 45–55 mm.
-'Common Banded Awl': const ButterflyInfo(
-  description:
-      'A fast-flying dark brown skipper with a distinct white band across its hindwings. Common in gardens and forests of South Asia.',
-  reproduction:
-      'Egg → caterpillar → pupa → adult. Eggs laid on leguminous plants; larvae rest in leaf shelters during the day.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, gardens'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–55 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Active at dawn and dusk',
-        'Rests under leaves in daytime'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Common in South Asia',
-        'Strong and rapid flyer'
-      ],
-    ),
-  ],
-),
+  // Widespread in South & Southeast Asia; dark brown skipper with white band; host: legumes; wingspan 45–55 mm.
+  'Common Banded Awl': const ButterflyInfo(
+    description:
+        'A fast-flying dark brown skipper with a distinct white band across its hindwings. Common in gardens and forests of South Asia.',
+    reproduction:
+        'Egg → caterpillar → pupa → adult. Eggs laid on leguminous plants; larvae rest in leaf shelters during the day.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, gardens'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–55 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Active at dawn and dusk', 'Rests under leaves in daytime'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Common in South Asia', 'Strong and rapid flyer'],
+      ),
+    ],
+  ),
 
-// 32. Common Wood-Nymph (Cercyonis pegala)
-// North America; brown butterfly with eyespots; host: grasses; wingspan 45–75 mm.
-'Common Wood-Nymph': const ButterflyInfo(
-  description:
-      'A soft brown butterfly with eye spots on its forewings, found in fields and open woods throughout North America.',
-  reproduction:
-      'Eggs laid on grasses; larvae overwinter and resume feeding in spring before pupating.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Fields, open woods'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Jun–Sep'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Grasses'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–75 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Flies close to the ground',
-        'Often perches on tall grass stems'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Variable eyespot patterns',
-        'One brood per year in most regions'
-      ],
-    ),
-  ],
-),
+  // 32. Common Wood-Nymph (Cercyonis pegala)
+  // North America; brown butterfly with eyespots; host: grasses; wingspan 45–75 mm.
+  'Common Wood-Nymph': const ButterflyInfo(
+    description:
+        'A soft brown butterfly with eye spots on its forewings, found in fields and open woods throughout North America.',
+    reproduction:
+        'Eggs laid on grasses; larvae overwinter and resume feeding in spring before pupating.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Fields, open woods'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Jun–Sep'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Grasses'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–75 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Flies close to the ground',
+          'Often perches on tall grass stems',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Variable eyespot patterns',
+          'One brood per year in most regions',
+        ],
+      ),
+    ],
+  ),
 
-// 33. Copper Tail (Lycaenidae family, e.g. Cigaritis vulcanus)
-// Africa & Asia; small orange with tail tips; host: legumes, Zizyphus; wingspan 25–35 mm.
-'Copper Tail': const ButterflyInfo(
-  description:
-      'A small orange-brown butterfly with fine tail extensions and black markings. Common in dry open habitats.',
-  reproduction:
-      'Eggs laid on legumes or Zizyphus shrubs; larvae often tended by ants for protection.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Dry scrub, savanna'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes, Zizyphus'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 25–35 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Often perches on low shrubs',
-        'Adults visit small flowers for nectar'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Common lycaenid butterfly',
-        'Larvae have mutualistic ants'
-      ],
-    ),
-  ],
-),
+  // 33. Copper Tail (Lycaenidae family, e.g. Cigaritis vulcanus)
+  // Africa & Asia; small orange with tail tips; host: legumes, Zizyphus; wingspan 25–35 mm.
+  'Copper Tail': const ButterflyInfo(
+    description:
+        'A small orange-brown butterfly with fine tail extensions and black markings. Common in dry open habitats.',
+    reproduction:
+        'Eggs laid on legumes or Zizyphus shrubs; larvae often tended by ants for protection.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Dry scrub, savanna'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes, Zizyphus'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 25–35 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Often perches on low shrubs',
+          'Adults visit small flowers for nectar',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Common lycaenid butterfly', 'Larvae have mutualistic ants'],
+      ),
+    ],
+  ),
 
-// 34. Crescent (Phyciodes tharos - Pearl Crescent)
-// N. America; orange patterned butterfly; host asters; wingspan 30–40 mm.
-'Crescent': const ButterflyInfo(
-  description:
-      'The Pearl Crescent is a small orange-and-black butterfly common in sunny meadows and roadsides across North America.',
-  reproduction:
-      'Eggs laid in clusters on asters; multiple generations per year.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, fields'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Oct'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Asters'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 30–40 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Flies close to the ground',
-        'Can be abundant in open areas'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Several broods yearly',
-        'Easily confused with similar crescents'
-      ],
-    ),
-  ],
-),
+  // 34. Crescent (Phyciodes tharos - Pearl Crescent)
+  // N. America; orange patterned butterfly; host asters; wingspan 30–40 mm.
+  'Crescent': const ButterflyInfo(
+    description:
+        'The Pearl Crescent is a small orange-and-black butterfly common in sunny meadows and roadsides across North America.',
+    reproduction:
+        'Eggs laid in clusters on asters; multiple generations per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, fields'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Oct'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Asters'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 30–40 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Flies close to the ground', 'Can be abundant in open areas'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Several broods yearly',
+          'Easily confused with similar crescents',
+        ],
+      ),
+    ],
+  ),
 
-// 35. Crimson Patch (Chlosyne janais)
-// Central America to S Texas; red and black wings; host: acanthus family; wingspan 45–55 mm.
-'Crimson Patch': const ButterflyInfo(
-  description:
-      'A bright red-and-black butterfly found in tropical regions from Mexico to South Texas, often near streams.',
-  reproduction:
-      'Eggs laid on Acanthaceae plants like Justicia; larvae are spiny and gregarious.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, streams'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Acanthaceae'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–55 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Perches on low vegetation',
-        'Often sunning with open wings'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Named for its bright red “patches”',
-        'Occasional visitor to southern U.S.'
-      ],
-    ),
-  ],
-),
+  // 35. Crimson Patch (Chlosyne janais)
+  // Central America to S Texas; red and black wings; host: acanthus family; wingspan 45–55 mm.
+  'Crimson Patch': const ButterflyInfo(
+    description:
+        'A bright red-and-black butterfly found in tropical regions from Mexico to South Texas, often near streams.',
+    reproduction:
+        'Eggs laid on Acanthaceae plants like Justicia; larvae are spiny and gregarious.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, streams'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Acanthaceae'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–55 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Perches on low vegetation', 'Often sunning with open wings'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Named for its bright red “patches”',
+          'Occasional visitor to southern U.S.',
+        ],
+      ),
+    ],
+  ),
 
-// 36. Danaid Eggfly (Hypolimnas misippus)
-// Tropical butterfly; mimic of monarchs; host: Portulaca, Sida; wingspan 70–85 mm.
-'Danaid Eggfly': const ButterflyInfo(
-  description:
-      'A striking butterfly with dark brown wings and white spots, the female mimics monarchs and other toxic species.',
-  reproduction:
-      'Eggs laid on Portulaca and Sida plants; larvae black with orange spines; several generations per year.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, open woodland'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Portulaca, Sida'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 70–85 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Common in sunny clearings',
-        'Males defend territories'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Females mimic toxic monarchs',
-        'Widespread across tropics'
-      ],
-    ),
-  ],
-),
+  // 36. Danaid Eggfly (Hypolimnas misippus)
+  // Tropical butterfly; mimic of monarchs; host: Portulaca, Sida; wingspan 70–85 mm.
+  'Danaid Eggfly': const ButterflyInfo(
+    description:
+        'A striking butterfly with dark brown wings and white spots, the female mimics monarchs and other toxic species.',
+    reproduction:
+        'Eggs laid on Portulaca and Sida plants; larvae black with orange spines; several generations per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, open woodland'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Portulaca, Sida'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 70–85 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Common in sunny clearings', 'Males defend territories'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Females mimic toxic monarchs', 'Widespread across tropics'],
+      ),
+    ],
+  ),
 
-// 37. Eastern Comma (Polygonia comma)
-// N. America; orange wings with ragged edges; host: nettle, elm; wingspan 45–60 mm.
-'Eastern Comma': const ButterflyInfo(
-  description:
-      'The Eastern Comma is an orange butterfly with irregular wing edges and a small silver comma mark on the underside.',
-  reproduction:
-      'Eggs laid on nettles, elms, and hops; two broods per year; adults hibernate over winter.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, gardens'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Oct'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Elm, Nettle, Hop'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–60 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Often basks on tree trunks',
-        'Underside provides excellent camouflage'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Overwinters as adult butterfly',
-        'Common across eastern North America'
-      ],
-    ),
-  ],
-),
+  // 37. Eastern Comma (Polygonia comma)
+  // N. America; orange wings with ragged edges; host: nettle, elm; wingspan 45–60 mm.
+  'Eastern Comma': const ButterflyInfo(
+    description:
+        'The Eastern Comma is an orange butterfly with irregular wing edges and a small silver comma mark on the underside.',
+    reproduction:
+        'Eggs laid on nettles, elms, and hops; two broods per year; adults hibernate over winter.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, gardens'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Oct'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Elm, Nettle, Hop'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–60 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Often basks on tree trunks',
+          'Underside provides excellent camouflage',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Overwinters as adult butterfly',
+          'Common across eastern North America',
+        ],
+      ),
+    ],
+  ),
 
-// 38. Eastern Dapple White (Euchloe ausonides)
-// Western North America; white butterfly with green marbling; host: mustards; wingspan 35–50 mm.
-'Eastern Dapple White': const ButterflyInfo(
-  description:
-      'A white butterfly with greenish marbled underwings, found in open fields and sagebrush habitats.',
-  reproduction:
-      'Eggs laid singly on mustards; larvae blend with green stems; one or two broods yearly.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Open fields, foothills'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Aug'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Mustards'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 35–50 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Flies close to the ground',
-        'Best seen in spring bloom'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Camouflaged underside pattern',
-        'Common in western U.S. prairies'
-      ],
-    ),
-  ],
-),
+  // 38. Eastern Dapple White (Euchloe ausonides)
+  // Western North America; white butterfly with green marbling; host: mustards; wingspan 35–50 mm.
+  'Eastern Dapple White': const ButterflyInfo(
+    description:
+        'A white butterfly with greenish marbled underwings, found in open fields and sagebrush habitats.',
+    reproduction:
+        'Eggs laid singly on mustards; larvae blend with green stems; one or two broods yearly.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Open fields, foothills'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Aug'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Mustards'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 35–50 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Flies close to the ground', 'Best seen in spring bloom'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Camouflaged underside pattern',
+          'Common in western U.S. prairies',
+        ],
+      ),
+    ],
+  ),
 
-// 39. Eastern Pine Elfin (Callophrys niphon)
-// Small hairstreak of pine forests; wingspan 22–28 mm; host: pines.
-'Eastern Pine Elfin': const ButterflyInfo(
-  description:
-      'A tiny brown butterfly with a faint tail and pale line, found in pine forests of eastern North America.',
-  reproduction:
-      'Eggs laid on pine needles; larvae feed on new growth; one early-spring generation.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Pine forests'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Jun'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Pines'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 22–28 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Perches on pine twigs',
-        'Tiny and quick in early spring'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'One of the earliest spring hairstreaks',
-        'Single brood per year'
-      ],
-    ),
-  ],
-),
+  // 39. Eastern Pine Elfin (Callophrys niphon)
+  // Small hairstreak of pine forests; wingspan 22–28 mm; host: pines.
+  'Eastern Pine Elfin': const ButterflyInfo(
+    description:
+        'A tiny brown butterfly with a faint tail and pale line, found in pine forests of eastern North America.',
+    reproduction:
+        'Eggs laid on pine needles; larvae feed on new growth; one early-spring generation.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Pine forests'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Jun'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Pines'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 22–28 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Perches on pine twigs', 'Tiny and quick in early spring'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'One of the earliest spring hairstreaks',
+          'Single brood per year',
+        ],
+      ),
+    ],
+  ),
 
-// 40. Elbowed Pierrot (Caleta elna)
-// South & Southeast Asia; small black-and-white butterfly; host: Zizyphus; wingspan 25–35 mm.
-'Elbowed Pierrot': const ButterflyInfo(
-  description:
-      'A tiny black-and-white butterfly with angular hindwing bands, found fluttering close to the ground in open woods.',
-  reproduction:
-      'Eggs laid on Zizyphus leaves; larvae green with short hairs; several broods per year.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Scrub, forest edges'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Zizyphus spp.'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 25–35 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Flutters low near paths',
-        'Often settles with wings closed'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Common in Asia’s woodlands',
-        'Fast, erratic flyer'
-      ],
-    ),
-  ],
-),
+  // 40. Elbowed Pierrot (Caleta elna)
+  // South & Southeast Asia; small black-and-white butterfly; host: Zizyphus; wingspan 25–35 mm.
+  'Elbowed Pierrot': const ButterflyInfo(
+    description:
+        'A tiny black-and-white butterfly with angular hindwing bands, found fluttering close to the ground in open woods.',
+    reproduction:
+        'Eggs laid on Zizyphus leaves; larvae green with short hairs; several broods per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Scrub, forest edges'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Zizyphus spp.'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 25–35 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Flutters low near paths', 'Often settles with wings closed'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Common in Asia’s woodlands', 'Fast, erratic flyer'],
+      ),
+    ],
+  ),
 
-// 41. Emperor Gum Moth (Opodiphthera eucalypti)
-// Large Australian silk moth; wingspan up to 15 cm; host: Eucalyptus.
-'Emperor Gum Moth': const ButterflyInfo(
-  description:
-      'A large Australian silk moth with eye spots on all four wings. Adults do not feed and live only a few days.',
-  reproduction:
-      'Egg → caterpillar → cocoon → adult. Larvae feed on Eucalyptus leaves; pupate in tough cocoons.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Eucalyptus woodland'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Late summer–autumn'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Eucalyptus'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: up to 15 cm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Attracted to lights at night',
-        'Large and slow-flying moth'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Adults do not feed',
-        'Iconic Australian silk moth'
-      ],
-    ),
-  ],
-),
+  // 41. Emperor Gum Moth (Opodiphthera eucalypti)
+  // Large Australian silk moth; wingspan up to 15 cm; host: Eucalyptus.
+  'Emperor Gum Moth': const ButterflyInfo(
+    description:
+        'A large Australian silk moth with eye spots on all four wings. Adults do not feed and live only a few days.',
+    reproduction:
+        'Egg → caterpillar → cocoon → adult. Larvae feed on Eucalyptus leaves; pupate in tough cocoons.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Eucalyptus woodland'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Late summer–autumn',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Eucalyptus'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: up to 15 cm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Attracted to lights at night', 'Large and slow-flying moth'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Adults do not feed', 'Iconic Australian silk moth'],
+      ),
+    ],
+  ),
 
-// 42. Garden Tiger Moth (Arctia caja)
-// Europe & N. America; hairy caterpillar “woolly bear”; wingspan 45–65 mm.
-'Garden Tiger Moth': const ButterflyInfo(
-  description:
-      'A colorful moth with brown-and-white forewings and bright orange hindwings with blue spots. Common in temperate regions.',
-  reproduction:
-      'Eggs laid on low plants; larvae are “woolly bears” feeding on dandelion and dock.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, gardens'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Jun–Aug'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Dandelion, Dock'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–65 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Often seen at lights',
-        'Larvae overwinter in leaf litter'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Aposematic coloration deters predators',
-        'Declining in some regions'
-      ],
-    ),
-  ],
-),
+  // 42. Garden Tiger Moth (Arctia caja)
+  // Europe & N. America; hairy caterpillar “woolly bear”; wingspan 45–65 mm.
+  'Garden Tiger Moth': const ButterflyInfo(
+    description:
+        'A colorful moth with brown-and-white forewings and bright orange hindwings with blue spots. Common in temperate regions.',
+    reproduction:
+        'Eggs laid on low plants; larvae are “woolly bears” feeding on dandelion and dock.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, gardens'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Jun–Aug'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Dandelion, Dock'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–65 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Often seen at lights', 'Larvae overwinter in leaf litter'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Aposematic coloration deters predators',
+          'Declining in some regions',
+        ],
+      ),
+    ],
+  ),
 
-// 43. Giant Leopard Moth (Hypercompe scribonia)
-// Eastern U.S.; white wings with black spots; wingspan 50–80 mm.
-'Giant Leopard Moth': const ButterflyInfo(
-  description:
-      'A beautiful white moth with bold black spots, found in gardens and woodlands of eastern North America.',
-  reproduction:
-      'Eggs laid on low plants; black spiny caterpillars feed on broadleaf weeds.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, woodland edges'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Sep'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Dandelion, Plantain'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 50–80 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Attracted to lights at night',
-        'Caterpillars curl when disturbed'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Found across eastern U.S.',
-        'Distinctive white-and-black pattern'
-      ],
-    ),
-  ],
-),
+  // 43. Giant Leopard Moth (Hypercompe scribonia)
+  // Eastern U.S.; white wings with black spots; wingspan 50–80 mm.
+  'Giant Leopard Moth': const ButterflyInfo(
+    description:
+        'A beautiful white moth with bold black spots, found in gardens and woodlands of eastern North America.',
+    reproduction:
+        'Eggs laid on low plants; black spiny caterpillars feed on broadleaf weeds.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, woodland edges'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Sep'),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Dandelion, Plantain',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 50–80 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Attracted to lights at night',
+          'Caterpillars curl when disturbed',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Found across eastern U.S.',
+          'Distinctive white-and-black pattern',
+        ],
+      ),
+    ],
+  ),
 
-// 44. Glittering Sapphire (Iolaus diametra)
-// Africa; small, bright blue hairstreak; host: mistletoe; wingspan 30–35 mm.
-'Glittering Sapphire': const ButterflyInfo(
-  description:
-      'A tiny African butterfly with brilliant metallic-blue wings and short tails. Common in open woodlands and near mistletoe plants.',
-  reproduction:
-      'Eggs laid on mistletoe; larvae feed within leaves; several broods per year.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Woodland, savanna'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Mistletoe'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 30–35 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Often perches high near host trees',
-        'Best seen in morning sunlight'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Shimmering blue coloration varies with light',
-        'Common across sub-Saharan Africa'
-      ],
-    ),
-  ],
-),
+  // 44. Glittering Sapphire (Iolaus diametra)
+  // Africa; small, bright blue hairstreak; host: mistletoe; wingspan 30–35 mm.
+  'Glittering Sapphire': const ButterflyInfo(
+    description:
+        'A tiny African butterfly with brilliant metallic-blue wings and short tails. Common in open woodlands and near mistletoe plants.',
+    reproduction:
+        'Eggs laid on mistletoe; larvae feed within leaves; several broods per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Woodland, savanna'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Mistletoe'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 30–35 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Often perches high near host trees',
+          'Best seen in morning sunlight',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Shimmering blue coloration varies with light',
+          'Common across sub-Saharan Africa',
+        ],
+      ),
+    ],
+  ),
 
-// 45. Gold Banded (Autochton cellus - Gold-banded Skipper)
-// Americas; large brown skipper with golden band; host: legumes; wingspan 45–65 mm.
-'Gold Banded': const ButterflyInfo(
-  description:
-      'A robust brown skipper with a bright golden diagonal band across each forewing. Found from the southern U.S. through Central America.',
-  reproduction:
-      'Eggs laid on legumes such as wisteria and false indigo; caterpillars live in folded leaves.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Woodland edges, gardens'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Oct'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–65 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Flies fast and low in shaded areas',
-        'Often rests on leaves with wings spread'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Common in the southern U.S. and tropics',
-        'Recognizable by its bright golden stripe'
-      ],
-    ),
-  ],
-),
+  // 45. Gold Banded (Autochton cellus - Gold-banded Skipper)
+  // Americas; large brown skipper with golden band; host: legumes; wingspan 45–65 mm.
+  'Gold Banded': const ButterflyInfo(
+    description:
+        'A robust brown skipper with a bright golden diagonal band across each forewing. Found from the southern U.S. through Central America.',
+    reproduction:
+        'Eggs laid on legumes such as wisteria and false indigo; caterpillars live in folded leaves.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Woodland edges, gardens'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Oct'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–65 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Flies fast and low in shaded areas',
+          'Often rests on leaves with wings spread',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Common in the southern U.S. and tropics',
+          'Recognizable by its bright golden stripe',
+        ],
+      ),
+    ],
+  ),
 
-// 46. Great Eggfly (Hypolimnas bolina)
-// Asia-Pacific region; large butterfly; males black with violet sheen; host: Portulaca, Sida; wingspan 70–85 mm.
-'Great Eggfly': const ButterflyInfo(
-  description:
-      'A large tropical butterfly. Males are black with vivid purple-blue spots, while females mimic other species for protection.',
-  reproduction:
-      'Eggs laid on Portulaca and Sida plants; larvae black with orange spines; multiple generations yearly.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, forest edges'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Portulaca, Sida'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 70–85 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Common in sunny open areas',
-        'Males defend territories'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Female mimics toxic species',
-        'Widespread across Asia and Pacific islands'
-      ],
-    ),
-  ],
-),
+  // 46. Great Eggfly (Hypolimnas bolina)
+  // Asia-Pacific region; large butterfly; males black with violet sheen; host: Portulaca, Sida; wingspan 70–85 mm.
+  'Great Eggfly': const ButterflyInfo(
+    description:
+        'A large tropical butterfly. Males are black with vivid purple-blue spots, while females mimic other species for protection.',
+    reproduction:
+        'Eggs laid on Portulaca and Sida plants; larvae black with orange spines; multiple generations yearly.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, forest edges'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Portulaca, Sida'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 70–85 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Common in sunny open areas', 'Males defend territories'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Female mimics toxic species',
+          'Widespread across Asia and Pacific islands',
+        ],
+      ),
+    ],
+  ),
 
-// 47. Great Jay (Graphium evemon)
-// Southeast Asia; swallowtail with blue bands; host: citrus and laurels; wingspan 80–100 mm.
-'Great Jay': const ButterflyInfo(
-  description:
-      'A beautiful swallowtail butterfly with blue and black bands. Found in tropical forests of Southeast Asia.',
-  reproduction:
-      'Eggs laid on laurels and citrus trees; larvae green and smooth; several broods in warm regions.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Tropical forests'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Citrus, Lauraceae'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 80–100 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Often seen feeding at flowers',
-        'Swift, gliding flight in forest clearings'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'One of several “Jay” species with blue bands',
-        'Prefers humid lowland forests'
-      ],
-    ),
-  ],
-),
+  // 47. Great Jay (Graphium evemon)
+  // Southeast Asia; swallowtail with blue bands; host: citrus and laurels; wingspan 80–100 mm.
+  'Great Jay': const ButterflyInfo(
+    description:
+        'A beautiful swallowtail butterfly with blue and black bands. Found in tropical forests of Southeast Asia.',
+    reproduction:
+        'Eggs laid on laurels and citrus trees; larvae green and smooth; several broods in warm regions.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Tropical forests'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Citrus, Lauraceae'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 80–100 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Often seen feeding at flowers',
+          'Swift, gliding flight in forest clearings',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'One of several “Jay” species with blue bands',
+          'Prefers humid lowland forests',
+        ],
+      ),
+    ],
+  ),
 
-// 48. Green-celled Cattleheart (Parides childrenae)
-// Central & South America; black butterfly with red spots and green patch; host: Aristolochia; wingspan 70–90 mm.
-'Green Celled Cattleheart': const ButterflyInfo(
-  description:
-      'A striking black butterfly with a greenish iridescent patch on its wings and red spots on the hindwings. Common in tropical forests.',
-  reproduction:
-      'Eggs laid on pipevines (Aristolochia); larvae toxic due to host plant chemicals.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Tropical forests'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Year-round (tropics)'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Aristolochia vines'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 70–90 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Common near forest streams',
-        'Slow and graceful flight pattern'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Unpalatable to predators',
-        'Part of the swallowtail family'
-      ],
-    ),
-  ],
-),
+  // 48. Green-celled Cattleheart (Parides childrenae)
+  // Central & South America; black butterfly with red spots and green patch; host: Aristolochia; wingspan 70–90 mm.
+  'Green Celled Cattleheart': const ButterflyInfo(
+    description:
+        'A striking black butterfly with a greenish iridescent patch on its wings and red spots on the hindwings. Common in tropical forests.',
+    reproduction:
+        'Eggs laid on pipevines (Aristolochia); larvae toxic due to host plant chemicals.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Tropical forests'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Aristolochia vines',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 70–90 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Common near forest streams',
+          'Slow and graceful flight pattern',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Unpalatable to predators', 'Part of the swallowtail family'],
+      ),
+    ],
+  ),
 
-// 49. Green Hairstreak (Callophrys rubi)
-// Europe & Asia; small green butterfly; host: gorse, buckthorn; wingspan 26–34 mm.
-'Green Hairstreak': const ButterflyInfo(
-  description:
-      'A small butterfly with brilliant green underwings and brown upperwings. Common in heathland and scrub areas.',
-  reproduction:
-      'Eggs laid on gorse, broom, and buckthorn; one generation per year; overwinters as pupa.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Heathland, scrub'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Jun'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Gorse, Buckthorn'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 26–34 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Perches on shrubs in sunny spots',
-        'Always rests with wings closed'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Only green butterfly in Europe',
-        'One brood per year'
-      ],
-    ),
-  ],
-),
+  // 49. Green Hairstreak (Callophrys rubi)
+  // Europe & Asia; small green butterfly; host: gorse, buckthorn; wingspan 26–34 mm.
+  'Green Hairstreak': const ButterflyInfo(
+    description:
+        'A small butterfly with brilliant green underwings and brown upperwings. Common in heathland and scrub areas.',
+    reproduction:
+        'Eggs laid on gorse, broom, and buckthorn; one generation per year; overwinters as pupa.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Heathland, scrub'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Jun'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Gorse, Buckthorn'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 26–34 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Perches on shrubs in sunny spots',
+          'Always rests with wings closed',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Only green butterfly in Europe', 'One brood per year'],
+      ),
+    ],
+  ),
 
-// 50. Grey Hairstreak (Strymon melinus)
-// Americas; gray butterfly with orange spots and tail; host: legumes and mallows; wingspan 25–38 mm.
-'Grey Hairstreak': const ButterflyInfo(
-  description:
-      'A small gray butterfly with delicate tails and bright orange spots near the hindwing edge. Found across the Americas.',
-  reproduction:
-      'Eggs laid on many host plants including mallows and legumes; multiple generations per year.',
-  chips: [
-    InfoChipData(icon: Icons.park, label: 'Habitat: Fields, gardens'),
-    InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Oct'),
-    InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes, Mallows'),
-    InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 25–38 mm'),
-  ],
-  cards: [
-    InfoCardData(
-      title: 'Observation tips',
-      leading: Icons.visibility_outlined,
-      bullets: [
-        'Flutters around flowers and shrubs',
-        'Common in sunny, open habitats'
-      ],
-    ),
-    InfoCardData(
-      title: 'Notes',
-      leading: Icons.public,
-      bullets: [
-        'Very widespread in the Americas',
-        'One of the most adaptable hairstreaks'
-      ],
-    ),
-  ],
-),
+  // 50. Grey Hairstreak (Strymon melinus)
+  // Americas; gray butterfly with orange spots and tail; host: legumes and mallows; wingspan 25–38 mm.
+  'Grey Hairstreak': const ButterflyInfo(
+    description:
+        'A small gray butterfly with delicate tails and bright orange spots near the hindwing edge. Found across the Americas.',
+    reproduction:
+        'Eggs laid on many host plants including mallows and legumes; multiple generations per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Fields, gardens'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Oct'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Legumes, Mallows'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 25–38 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Flutters around flowers and shrubs',
+          'Common in sunny, open habitats',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Very widespread in the Americas',
+          'One of the most adaptable hairstreaks',
+        ],
+      ),
+    ],
+  ),
 
+  // 51. Hercules Moth (Coscinocera hercules)
+  // Northern Australia & New Guinea; world’s largest wingspan up to 27 cm; host: rainforest trees.
+  'Hercules Moth': const ButterflyInfo(
+    description:
+        'One of the world’s largest moths, the Hercules Moth has pale brown wings with long tails and transparent patches. Found in tropical rainforests of Australia and New Guinea.',
+    reproduction:
+        'Egg → caterpillar → cocoon → adult. Caterpillars feed on rainforest trees such as Dysoxylum and Glochidion. Adults do not feed.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Tropical rainforest'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Summer, nocturnal',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Dysoxylum, Glochidion',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: up to 27 cm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Attracted to light at night', 'Adults live only a few days'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Largest wingspan of any moth', 'Adults lack mouthparts'],
+      ),
+    ],
+  ),
+
+  // 52. Hummingbird Hawk Moth (Macroglossum stellatarum)
+  // Europe, Asia, N. Africa; day-flying moth; hovers like hummingbird; host: bedstraws; wingspan 40–50 mm.
+  'Humming Bird Hawk Moth': const ButterflyInfo(
+    description:
+        'A fast-flying, day-active moth that hovers while feeding on flowers like a hummingbird. Common across Europe and Asia.',
+    reproduction:
+        'Eggs laid on bedstraw (Galium) plants; several broods per year; migratory in colder regions.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, meadows'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Apr–Oct (daytime)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Bedstraws'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 40–50 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Easily seen feeding on flowers in sunlight',
+          'Hovers with blurred wings like a hummingbird',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Migrates north each summer',
+          'One of the few day-flying hawk moths',
+        ],
+      ),
+    ],
+  ),
+
+  // 53. Indra Swallowtail (Papilio indra)
+  // Western North America; black swallowtail with pale bands; host: desert parsleys; wingspan 75–90 mm.
+  'Indra Swallow': const ButterflyInfo(
+    description:
+        'A dark, elegant swallowtail of western North America with pale cream bands and short tails. Prefers desert canyons and slopes.',
+    reproduction:
+        'Eggs laid on desert parsley (Lomatium); one or two generations depending on region.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Arid canyons, slopes'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Jul'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Lomatium spp.'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 75–90 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Seen gliding along ridges and slopes',
+          'Best observed in early spring',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Endemic to western U.S.', 'Prefers hot, rocky habitats'],
+      ),
+    ],
+  ),
+
+  // 54. Io Moth (Automeris io)
+  // North America; yellow or brown with large eyespots; host: willow, clover; wingspan 60–80 mm.
+  'Io Moth': const ButterflyInfo(
+    description:
+        'A colorful silk moth with large eye spots on its hindwings used to startle predators. Males are bright yellow, females brownish.',
+    reproduction:
+        'Eggs laid in clusters; spiny green caterpillars feed on willow, clover, and other plants.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, forests'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Aug'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Willow, Clover'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 60–80 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Attracted to lights at night',
+          'Shows eyespots when disturbed',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Caterpillars have stinging spines',
+          'Common silk moth across U.S.',
+        ],
+      ),
+    ],
+  ),
+
+  // 55. Iphiclus Sister (Adelpha iphiclus)
+  // Central & South America; brown with white and orange bands; host: Rubiaceae; wingspan 60–75 mm.
+  'Iphiclus Sister': const ButterflyInfo(
+    description:
+        'A tropical butterfly with brown wings marked by white and orange bands. Common along forest edges and rivers.',
+    reproduction:
+        'Eggs laid on Rubiaceae plants; larvae green with short spines; several broods yearly.',
+    chips: [
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: Forest edges, riversides',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Rubiaceae'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 60–75 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Perches with wings open in sunlight',
+          'Common in lowland forests',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Part of the “sister” group (genus Adelpha)',
+          'Distinctive orange-white pattern',
+        ],
+      ),
+    ],
+  ),
+
+  // 56. Julia (Dryas iulia)
+  // Bright orange butterfly; Americas; host: passion vines; wingspan 80–90 mm.
+  'Julia': const ButterflyInfo(
+    description:
+        'A long, bright orange butterfly with narrow wings, common in tropical gardens and forests of the Americas.',
+    reproduction:
+        'Eggs laid on passion vines; larvae orange with black spines; several generations per year.',
+    chips: [
+      InfoChipData(
+        icon: Icons.park,
+        label: 'Habitat: Gardens, tropical forests',
+      ),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Passiflora vines'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 80–90 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Often perches with wings spread wide',
+          'Feeds at lantana and verbena flowers',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Common in butterfly houses',
+          'Unpalatable to birds due to host toxins',
+        ],
+      ),
+    ],
+  ),
+
+  // 57. Large Marble (Euchloe ausonides)
+  // North America; white butterfly with green marbling; host: mustards; wingspan 35–50 mm.
+  'Large Marble': const ButterflyInfo(
+    description:
+        'A white butterfly with greenish marbled underwings, often found in meadows and open fields in North America.',
+    reproduction:
+        'Eggs laid on mustards and rock cress; one generation in cool areas, two in warm regions.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, foothills'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Jul'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Mustards'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 35–50 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Flies near ground level', 'Restless in warm sunlight'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Common throughout western North America',
+          'Similar to other marble whites',
+        ],
+      ),
+    ],
+  ),
+
+  // 58. Luna Moth (Actias luna)
+  // North America; large pale green silk moth; host: walnut, birch; wingspan 8–11 cm.
+  'Luna Moth': const ButterflyInfo(
+    description:
+        'A beautiful pale green moth with long tails and eye spots on each wing. Common in eastern North America.',
+    reproduction:
+        'Egg → caterpillar → cocoon → adult. Caterpillars feed on walnut, birch, and sweetgum; adults do not feed.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Deciduous forests'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Jul'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Walnut, Birch'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 80–110 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Attracted to lights at night',
+          'Rarely seen due to short lifespan',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Adults live only a week', 'Iconic North American moth'],
+      ),
+    ],
+  ),
+
+  // 59. Madagascan Sunset Moth (Chrysiridia rhipheus)
+  // Endemic to Madagascar; iridescent rainbow-colored wings; host: Omphalea; wingspan 70–90 mm.
+  'Madagascan Sunset Moth': const ButterflyInfo(
+    description:
+        'A spectacular day-flying moth with iridescent rainbow-colored wings. Found only in Madagascar.',
+    reproduction:
+        'Eggs laid on Omphalea trees; larvae feed on toxic leaves, gaining chemical protection.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Madagascar forests'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (day-flying)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Omphalea species'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 70–90 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'One of few colorful day-flying moths',
+          'Best seen in forest clearings',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Endemic to Madagascar',
+          'Considered one of the most beautiful insects',
+        ],
+      ),
+    ],
+  ),
+
+  // 60. Malachite (Siproeta stelenes)
+  // Central & South America; green and brown wings; host: Ruellia; wingspan 80–95 mm.
+  'Malachite': const ButterflyInfo(
+    description:
+        'A tropical butterfly with vivid green and brown patterned wings. Common in Central and South America.',
+    reproduction:
+        'Eggs laid on Ruellia and related plants; larvae dark with spines; several broods per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, gardens'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Ruellia, Acanthaceae',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 80–95 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Often seen gliding in shaded clearings',
+          'Nectars on bright tropical flowers',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Named for malachite-green coloration',
+          'Common in butterfly gardens',
+        ],
+      ),
+    ],
+  ),
+
+  // 61. Mangrove Skipper (Phocides pigmalion)
+  // Coastal Florida, Caribbean, Central America; large dark skipper; host: red mangrove; wingspan 60–80 mm.
+  'Mangrove Skipper': const ButterflyInfo(
+    description:
+        'A large, dark brown skipper with iridescent blue reflections, found in mangrove swamps and coastal areas.',
+    reproduction:
+        'Eggs laid on red mangrove leaves; larvae rest in rolled leaf shelters; several broods per year in warm climates.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Mangroves, coasts'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Red mangrove'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 60–80 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Flies swiftly along mangrove edges',
+          'Rests with wings partially open',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Common in southern Florida',
+          'Prefers humid coastal environments',
+        ],
+      ),
+    ],
+  ),
+
+  // 62. Mestra (Mestra amymone - Common Mestra)
+  // Southern U.S. to South America; white and orange; host: Tragia; wingspan 35–45 mm.
+  'Mestra': const ButterflyInfo(
+    description:
+        'A small white butterfly with orange and black markings, found from Texas to South America in open fields and brushy areas.',
+    reproduction:
+        'Eggs laid on noseburn (Tragia) plants; larvae feed on leaves and stems; several generations per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Fields, scrub'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Nov'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Tragia spp.'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 35–45 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Often flutters close to the ground',
+          'Common after rains in open fields',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Sometimes migratory',
+          'Only member of its genus in North America',
+        ],
+      ),
+    ],
+  ),
+
+  // 63. Metalmark (Family Riodinidae - e.g. Calephelis nemesis)
+  // Americas; small butterflies with metallic spots; host: asters, eupatorium; wingspan 25–35 mm.
+  'Metalmark': const ButterflyInfo(
+    description:
+        'A group of small butterflies with metallic spots and patterns on their wings. Common in sunny clearings and along streams.',
+    reproduction:
+        'Eggs laid on asters or eupatorium; larvae often flattened and slug-like; several broods per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, woodland edges'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Spring–Autumn',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Asters, Eupatorium',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 25–35 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Often rest with wings spread flat',
+          'Look for metallic reflections in sunlight',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Hundreds of species in the Americas',
+          'Named for their shiny wing scales',
+        ],
+      ),
+    ],
+  ),
+
+  // 64. Milbert’s Tortoiseshell (Aglais milberti)
+  // North America; orange and black; host: nettles; wingspan 45–60 mm.
+  'Milberts Tortoiseshell': const ButterflyInfo(
+    description:
+        'A striking orange-and-black butterfly with a yellow border, common near moist meadows and forest edges.',
+    reproduction:
+        'Eggs laid on stinging nettles; one or two generations; adults hibernate through winter.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, forest edges'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: May–Sep'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Nettles'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–60 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Active in bright sunlight',
+          'Overwinters as an adult butterfly',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'One of the few northern overwintering species',
+          'Fast, low flight near nettle patches',
+        ],
+      ),
+    ],
+  ),
+
+  // 65. Monarch (Danaus plexippus)
+  // Famous migratory butterfly; North America; host: milkweed; wingspan 90–100 mm.
+  'Monarch': const ButterflyInfo(
+    description:
+        'The Monarch is one of the world’s most famous butterflies, known for its orange and black wings and epic migration across North America.',
+    reproduction:
+        'Eggs laid on milkweed; caterpillars feed exclusively on it, gaining toxins that deter predators; 3–4 generations per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, fields'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Mar–Oct (migratory)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Milkweed'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 90–100 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Easily recognized by its bold orange and black pattern',
+          'Seen during migration in large groups',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Migrates thousands of kilometers to Mexico',
+          'Toxic to predators due to milkweed diet',
+        ],
+      ),
+    ],
+  ),
+
+  // 66. Mourning Cloak (Nymphalis antiopa)
+  // North America, Europe; dark maroon with pale edges; host: willow, elm; wingspan 60–75 mm.
+  'Mourning Cloak': const ButterflyInfo(
+    description:
+        'A large maroon butterfly edged with pale yellow and blue spots. One of the first butterflies to appear in spring.',
+    reproduction:
+        'Eggs laid on willow and elm; one brood per year; adults overwinter and live up to 10 months.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Forest edges, parks'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Mar–Oct'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Willow, Elm'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 60–75 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Often basks on tree trunks in early spring',
+          'Feeds on sap and rotting fruit',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'One of the longest-lived butterflies',
+          'Known as “Camberwell Beauty” in Europe',
+        ],
+      ),
+    ],
+  ),
+
+  // 67. Oleander Hawk Moth (Daphnis nerii)
+  // Africa, Asia, Europe; large green hawk moth; host: oleander; wingspan 80–120 mm.
+  'Oleander Hawk Moth': const ButterflyInfo(
+    description:
+        'A spectacular green moth with leaf-like camouflage patterns. Found across Africa, Asia, and southern Europe.',
+    reproduction:
+        'Eggs laid on oleander and periwinkle; adults nectar at night; migratory species.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, forests'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Summer, nocturnal',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Oleander, Periwinkle',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 80–120 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Attracted to light at night',
+          'Often seen resting on walls or foliage by day',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Strong flyer and migrant',
+          'Camouflage makes it nearly invisible on leaves',
+        ],
+      ),
+    ],
+  ),
+
+  // 68. Orange Oakleaf (Kallima inachus)
+  // South & Southeast Asia; leaf-mimicking butterfly; host: Strobilanthes; wingspan 85–110 mm.
+  'Orange Oakleaf': const ButterflyInfo(
+    description:
+        'A remarkable butterfly with bright orange and blue upperwings but undersides that look exactly like a dead leaf.',
+    reproduction:
+        'Eggs laid on Strobilanthes plants; larvae green with spines; adults rest with closed wings to blend in.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Forests, gardens'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (tropics)',
+      ),
+      InfoChipData(
+        icon: Icons.nature,
+        label: 'Larval host: Strobilanthes spp.',
+      ),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 85–110 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'Resting adults resemble dry leaves perfectly',
+          'Open wings reveal vivid orange patches',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: ['Master of camouflage', 'Found throughout tropical Asia'],
+      ),
+    ],
+  ),
+
+  // 69. Orange Tip (Anthocharis cardamines)
+  // Europe & Asia; white with orange wing tips; host: garlic mustard; wingspan 45–50 mm.
+  'Orange Tip': const ButterflyInfo(
+    description:
+        'A small white butterfly with bright orange tips on male forewings. Common in spring meadows and hedgerows.',
+    reproduction:
+        'Eggs laid singly on garlic mustard and cuckoo flower; one spring generation per year.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Meadows, woodland edges'),
+      InfoChipData(icon: Icons.stacked_line_chart, label: 'Flight: Apr–Jun'),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Garlic mustard'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 45–50 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: [
+          'One of the first butterflies of spring',
+          'Males easily spotted by orange tips',
+        ],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Single generation each year',
+          'Females lack orange markings',
+        ],
+      ),
+    ],
+  ),
+
+  // 70. Orchard Swallowtail (Papilio aegeus)
+  // Australia; large black-and-white swallowtail; host: citrus; wingspan 100–120 mm.
+  'Orchard Swallow': const ButterflyInfo(
+    description:
+        'A large black-and-white swallowtail common in eastern Australia. Females are variable, with white or cream markings.',
+    reproduction:
+        'Eggs laid on citrus trees; larvae resemble bird droppings when young; several broods yearly.',
+    chips: [
+      InfoChipData(icon: Icons.park, label: 'Habitat: Gardens, forests'),
+      InfoChipData(
+        icon: Icons.stacked_line_chart,
+        label: 'Flight: Year-round (warm regions)',
+      ),
+      InfoChipData(icon: Icons.nature, label: 'Larval host: Citrus'),
+      InfoChipData(icon: Icons.info_outline, label: 'Wingspan: 100–120 mm'),
+    ],
+    cards: [
+      InfoCardData(
+        title: 'Observation tips',
+        leading: Icons.visibility_outlined,
+        bullets: ['Common around citrus trees', 'Slow, graceful flight'],
+      ),
+      InfoCardData(
+        title: 'Notes',
+        leading: Icons.public,
+        bullets: [
+          'Australia’s largest swallowtail',
+          'Easily raised on citrus in captivity',
+        ],
+      ),
+    ],
+  ),
 };
