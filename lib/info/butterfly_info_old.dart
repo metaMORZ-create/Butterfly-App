@@ -56,7 +56,7 @@ class ButterflyInfo {
 /// your UI (for example the `commonName` returned from the API or stored in
 /// the database).  This allows the details page to find the correct data
 /// when a user selects a butterfly from the collection.
-final Map<String, ButterflyInfo> butterflyInfoMap = {
+final Map<String, ButterflyInfo> butterflyInfoMapOld = {
   // 1. Admiral (Vanessa atalanta)
   // Facts gathered from Biologie‑Schule: wingspan 5–6 cm, found in forests,
   // meadows and gardens; adults feed on nectar from butterfly bush,
