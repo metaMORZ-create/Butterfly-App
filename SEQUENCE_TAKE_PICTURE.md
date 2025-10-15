@@ -1,50 +1,33 @@
 ```mermaid
 sequenceDiagram
-    %% Teilnehmer
     actor Benutzer as User
     participant Home as HomePage
     participant Camera as CameraPage
     participant ImageSvc as ImageService
     participant Dialog
     participant IdSvc as IdentificationService
-    participant HTTP
-    participant idToSpeciesName
+    participant Map as idToSpeciesName
     participant NewResult as NewCaptureResultPage
-    participant butterflyInfoMap
+    participant InfoMap as butterflyInfoMap
 
-    %% Wechsel zur Kamera
+    %% Navigation zur Kamera
     User->>Home: Tab "Camera" wählen
-    Home->>Camera: Seite anzeigen
+    Home->>Camera: CameraPage anzeigen
 
-    %% Foto aufnehmen
-    User->>Camera: Tippt "Take Photo & Classify"
+    %% Foto aufnehmen und klassifizieren (nur Erfolgsfluss)
+    User->>Camera: "Take Photo & Classify" tippen
     Camera->>ImageSvc: takePhoto()
-    ImageSvc-->>Camera: File? image
+    ImageSvc-->>Camera: image (File)
 
-    alt Foto erfolgreich
-        Camera->>Camera: _lastImage setzen
-        Camera->>Dialog: Loader anzeigen
+    Camera->>Camera: _lastImage setzen
+    Camera->>Dialog: Loader anzeigen
+    Camera->>IdSvc: classifyPhoto(image)
+    IdSvc-->>Camera: species (String)
+    Camera->>Camera: _speciesToId(species) (butterflyId bestimmen)
+    Camera->>Dialog: Loader schließen
 
-        %% Klassifikation
-        Camera->>IdSvc: classifyPhoto(file)
-        IdSvc->>HTTP: POST /api/predict
-        HTTP-->>IdSvc: species (String)
-        IdSvc-->>Camera: species
+    Camera->>NewResult: Navigiere (butterflyId, imagePath)
+    NewResult->>Map: butterflyId → speciesName
+    NewResult->>InfoMap: Details laden
+    NewResult->>NewResult: Detailseite rendern
 
-        %% Mapping zur internen ID
-        Camera->>idToSpeciesName: species → butterflyId
-        alt ID gefunden
-            Camera->>Dialog: Loader schließen
-            Camera->>NewResult: öffnen (butterflyId, imagePath)
-
-            %% (Nur Anzeige der Infos auf Result-Seite)
-            NewResult->>idToSpeciesName: butterflyId → speciesName
-            NewResult->>butterflyInfoMap: Details laden
-            NewResult->>NewResult: Detailseite mit Bild & Info anzeigen
-        else keine ID gefunden
-            Camera->>Dialog: Loader schließen
-            Camera->>Camera: SnackBar "Unknown species returned"
-        end
-    else Foto abgebrochen/null
-        Camera->>Camera: Keine Aktion
-    end
