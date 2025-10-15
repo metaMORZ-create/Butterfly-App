@@ -1,3 +1,4 @@
+import 'package:butterfly_app/pages/butterfly_catalog_page.dart';
 import 'package:flutter/material.dart';
 import 'my_butterflies_page.dart'; // <--- Import hinzufügen
 
@@ -5,9 +6,9 @@ class InfoPage extends StatelessWidget {
   const InfoPage({super.key});
 
   void _notImplemented(BuildContext context, String feature) {
-    ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text("$feature not implemented yet.")),
-    );
+    ScaffoldMessenger.of(
+      context,
+    ).showSnackBar(SnackBar(content: Text("$feature not implemented yet.")));
   }
 
   @override
@@ -15,9 +16,7 @@ class InfoPage extends StatelessWidget {
     final scheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Information"),
-      ),
+      appBar: AppBar(title: const Text("Information")),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -32,9 +31,9 @@ class InfoPage extends StatelessWidget {
               const SizedBox(height: 20),
               Text(
                 "Here you can find your uploaded butterflies, explore the catalog, and view the heatmap of butterfly sightings.",
-                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                      color: Colors.grey[600],
-                    ),
+                style: Theme.of(
+                  context,
+                ).textTheme.bodyLarge?.copyWith(color: Colors.grey[600]),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 40),
@@ -78,7 +77,14 @@ class InfoPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),
-                  onPressed: () => _notImplemented(context, "Catalog"),
+                  onPressed:
+                      () {Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => const ButterflyCatalogPage(),
+                        ),
+                      );
+                      },
                   icon: const Icon(Icons.collections_bookmark),
                   label: const Text("Butterfly Catalog"),
                 ),
