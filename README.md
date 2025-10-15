@@ -1,6 +1,5 @@
-```mermaid
 sequenceDiagram
-    %% Teilnehmende Akteure und Komponenten
+    %% Teilnehmer
     actor Benutzer as User
     participant Main as main()
     participant SharedPrefs as SharedPreferences
@@ -20,8 +19,13 @@ sequenceDiagram
     participant NewResult as NewCaptureResultPage
     participant UploadSvc as UploadService
     participant FindingSvc as FindingService
+    participant Settings as SettingsPage
+    participant HTTP
+    participant Dialog
+    participant idToSpeciesName
+    participant butterflyInfoMap
 
-    %% App-Start: prüfen, ob Benutzer bereits eingeloggt ist
+    %% App-Start
     User->>Main: App starten
     Main->>SharedPrefs: getInstance()
     SharedPrefs-->>Main: prefs
@@ -35,110 +39,107 @@ sequenceDiagram
         alt Benutzer wählt „Login“
             User->>Intro: tippt Login-Button
             Intro->>Login: LoginPage öffnen
-            User->>Login: Eingabe von Benutzername & Passwort
+            User->>Login: Benutzername & Passwort eingeben
             Login->>LoginSvc: login(username,password)
-            LoginSvc->>+HTTP: POST /api/users/login
-            HTTP-->>LoginSvc: Antwort mit user und user_id
-            LoginSvc->>SharedPrefs: clear() und set loggedIn=true, username, user_id
-            LoginSvc-->>Login: Erfolg = true
-            Login->>Home: zu HomePage navigieren
+            LoginSvc->>HTTP: POST /api/users/login
+            HTTP-->>LoginSvc: { user, user_id }
+            LoginSvc->>SharedPrefs: clear(); set loggedIn=true; username; user_id
+            LoginSvc-->>Login: Erfolg=true
+            Login->>Home: navigieren
         else Benutzer wählt „Register“
             User->>Intro: tippt Register-Button
             Intro->>Register: RegisterPage öffnen
-            User->>Register: Eingabe von E-Mail, Benutzername & Passwort
+            User->>Register: E-Mail, Benutzername, Passwort
             Register->>LoginSvc: register(email,username,password)
-            LoginSvc->>+HTTP: POST /api/users/register
-            HTTP-->>LoginSvc: Antwort mit user und user_id
-            LoginSvc->>SharedPrefs: clear() und set loggedIn=true, username, user_id
-            LoginSvc-->>Register: Erfolg = true
-            Register->>Home: zu HomePage navigieren
+            LoginSvc->>HTTP: POST /api/users/register
+            HTTP-->>LoginSvc: { user, user_id }
+            LoginSvc->>SharedPrefs: clear(); set loggedIn=true; username; user_id
+            LoginSvc-->>Register: Erfolg=true
+            Register->>Home: navigieren
         end
     end
 
-    %% Navigation innerhalb der HomePage
-    User->>Home: wechselt Tab auf InfoPage
-    Home->>Info: InfoPage anzeigen
-    %% „Meine Schmetterlinge“ öffnen
+    %% „Meine Schmetterlinge“
+    User->>Home: Tab auf InfoPage wechseln
+    Home->>Info: anzeigen
     User->>Info: tippt „My Butterflies”
-    Info->>MyButterflies: MyButterfliesPage öffnen
+    Info->>MyButterflies: öffnen
     MyButterflies->>SharedPrefs: getInt('user_id')
     alt user_id vorhanden
         SharedPrefs-->>MyButterflies: userId
         MyButterflies->>RetrievalSvc: getUserUploads(userId,limit,sort,withButterfly)
-        RetrievalSvc->>+HTTP: GET /uploads/user/{userId}?limit…
-        HTTP-->>RetrievalSvc: JSON mit „items”
-        RetrievalSvc-->>MyButterflies: Liste von UserUpload
-        MyButterflies->>UploadGrid: Grid aus Upload-Tiles bauen
-        User->>UploadGrid: tippt auf ein Upload-Tile
+        RetrievalSvc->>HTTP: GET /uploads/user/{userId}?limit…
+        HTTP-->>RetrievalSvc: JSON { items }
+        RetrievalSvc-->>MyButterflies: List<UserUpload>
+        MyButterflies->>UploadGrid: Grid rendern
+        User->>UploadGrid: tippt auf Upload-Tile
         UploadGrid->>MyButterflies: onTapUpload(UserUpload)
-        MyButterflies->>FindingResult: FindingResultPage öffnen (butterflyId,imageUrl)
+        MyButterflies->>FindingResult: öffnen (butterflyId, imageUrl)
         FindingResult->>idToSpeciesName: butterflyId → speciesName
         alt speciesName & Info vorhanden
-            FindingResult->>butterflyInfoMap: Info laden
-            FindingResult: Detailseite mit Bild, Beschreibung, Chips & Karten anzeigen
+            FindingResult->>butterflyInfoMap: Details laden
+            FindingResult->>FindingResult: Detailseite darstellen
         else Information fehlt
-            FindingResult: Fehlermeldung „Unknown species“ anzeigen
+            FindingResult->>FindingResult: Fehlermeldung „Unknown species“
         end
     else user_id fehlt
         SharedPrefs-->>MyButterflies: null
-        MyButterflies: SnackBar „No User ID found“ anzeigen
+        MyButterflies->>MyButterflies: SnackBar „No User ID found“
     end
 
-    %% Kameraseite zum Aufnehmen & Klassifizieren
-    User->>Home: wechselt Tab auf CameraPage
-    Home->>Camera: CameraPage anzeigen
+    %% Kamera & Klassifizierung
+    User->>Home: Tab auf CameraPage
+    Home->>Camera: anzeigen
     User->>Camera: tippt „Take Photo & Classify”
     Camera->>ImageSvc: takePhoto()
     ImageSvc-->>Camera: File? image
-    alt Foto erfolgreich aufgenommen
+    alt Foto erfolgreich
         Camera->>Camera: _lastImage setzen
-        Camera->>Dialog: CircularProgressIndicator anzeigen
+        Camera->>Dialog: Loader anzeigen
         Camera->>IdSvc: classifyPhoto(file)
-        IdSvc->>+HTTP: POST /api/predict
-        HTTP-->>IdSvc: species-String
+        IdSvc->>HTTP: POST /api/predict
+        HTTP-->>IdSvc: species (String)
         IdSvc-->>Camera: species
         Camera->>Camera: _speciesToId(species)
         alt ID gefunden
             Camera->>Dialog: Loader schließen
-            Camera->>NewResult: zu NewCaptureResultPage navigieren (butterflyId,imagePath)
+            Camera->>NewResult: öffnen (butterflyId,imagePath)
             NewResult->>idToSpeciesName: butterflyId → speciesName
             alt speciesName & Info vorhanden
-                NewResult->>butterflyInfoMap: Info laden
+                NewResult->>butterflyInfoMap: Details laden
                 User->>NewResult: tippt „Save to My Butterflies”
                 NewResult->>SharedPrefs: getInt('user_id')
                 alt user_id vorhanden
                     SharedPrefs-->>NewResult: userId
-                    NewResult->>Dialog: CircularProgressIndicator anzeigen
+                    NewResult->>Dialog: Loader anzeigen
                     NewResult->>UploadSvc: uploadPhoto(file,userId,butterflyId,lat,lon)
-                    UploadSvc->>+HTTP: POST /uploads
-                    HTTP-->>UploadSvc: Upload-Resultat
+                    UploadSvc->>HTTP: POST /uploads
+                    HTTP-->>UploadSvc: Upload-Result
                     UploadSvc-->>NewResult: Erfolg
-                    NewResult->>FindingSvc: saveFinding(new Finding(...))
-                    FindingSvc->>SharedPrefs: vorhandene Funde laden & neuen Fund speichern
+                    NewResult->>FindingSvc: saveFinding(Finding(...))
+                    FindingSvc->>SharedPrefs: laden & speichern
                     NewResult->>Dialog: Loader schließen
-                    NewResult->>Home: SnackBar „Upload ok!“ und zurück zur Kamera
+                    NewResult->>Camera: „Upload ok!“ und zurück
                 else user_id fehlt
                     SharedPrefs-->>NewResult: null
-                    NewResult: SnackBar „No User ID found“ anzeigen
+                    NewResult->>NewResult: SnackBar „No User ID found“
                 end
             else speciesName unbekannt
-                NewResult: „Unknown species“ anzeigen
+                NewResult->>NewResult: „Unknown species“
             end
         else keine ID gefunden
             Camera->>Dialog: Loader schließen
-            Camera: SnackBar „Unknown species returned“ anzeigen
+            Camera->>Camera: SnackBar „Unknown species returned“
         end
-    else Foto ist null (abgebrochen)
-        Camera: Keine Aktion
+    else Foto abgebrochen
+        Camera->>Camera: keine Aktion
     end
 
-    %% Einstellungen und Logout
-    User->>Home: wechselt Tab auf SettingsPage
-    Home->>Settings: SettingsPage anzeigen
+    %% Einstellungen & Logout
+    User->>Home: Tab auf SettingsPage
+    Home->>Settings: anzeigen
     User->>Settings: tippt „Logout”
     Settings->>LoginSvc: logout()
     LoginSvc->>SharedPrefs: clear()
     LoginSvc-->>Settings: true
     Settings->>Intro: pushAndRemoveUntil(IntroPage)
-    Intro: IntroPage wieder sichtbar
-``` 
