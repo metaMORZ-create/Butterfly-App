@@ -1,3 +1,4 @@
+```mermaid
 sequenceDiagram
     %% Teilnehmer
     actor Benutzer as User
