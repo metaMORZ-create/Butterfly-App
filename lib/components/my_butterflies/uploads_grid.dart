@@ -29,7 +29,7 @@ class MyButterfliesUploadsGrid extends StatelessWidget {
         itemCount: uploads.length,
         itemBuilder: (context, i) {
           final it = uploads[i];
-          final title = it.butterfly?.commonName ?? "Schmetterling";
+          final title = it.butterfly?.commonName ?? "Butterfly";
           final thumb = it.butterfly?.thumbnailUrl ?? it.imageUrl;
 
           return MyButterfliesUploadTile(

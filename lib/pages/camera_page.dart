@@ -87,7 +87,7 @@ class _CameraPageState extends State<CameraPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Kamera")),
+      appBar: AppBar(title: const Text("Camera")),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(24.0),
@@ -116,7 +116,7 @@ class _CameraPageState extends State<CameraPage> {
                 child: FilledButton.icon(
                   onPressed: _takePhoto,
                   icon: const Icon(Icons.photo_camera),
-                  label: const Text("Foto aufnehmen & identifizieren"),
+                  label: const Text("Take Photo & Classify"),
                 ),
               ),
               const SizedBox(height: 16),
@@ -125,11 +125,11 @@ class _CameraPageState extends State<CameraPage> {
                 child: OutlinedButton.icon(
                   onPressed: () => ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text("Live-Aufnahme starten ist noch nicht implementiert."),
+                      content: Text("Live capture not implemented yet."),
                     ),
                   ),
                   icon: const Icon(Icons.videocam),
-                  label: const Text("Live-Aufnahme starten"),
+                  label: const Text("Start Live Capture"),
                 ),
               ),
             ],

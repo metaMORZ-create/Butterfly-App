@@ -20,7 +20,7 @@ class MyButterfliesEmptyState extends StatelessWidget {
             ),
             const SizedBox(height: 6),
             const Text(
-              'Fotografiere einen Falter und speichere ihn, um ihn hier zu sehen.',
+              'Take a Picture of a butterfly and upload it to see it here!',
               textAlign: TextAlign.center,
             ),
           ],

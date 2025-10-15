@@ -14,6 +14,8 @@ class _LoginPageState extends State<LoginPage> {
   final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
+  bool _obscurePassword = true; // Steuert, ob das Passwort verdeckt ist
+
   void _login() async {
     if (_formKey.currentState!.validate()) {
       final username = _usernameController.text.trim();
@@ -29,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
       } else {
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(const SnackBar(content: Text("Login fehlgeschlagen")));
+        ).showSnackBar(const SnackBar(content: Text("Login failed")));
       }
     }
   }
@@ -52,33 +54,52 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
+                    // Username-Feld
                     TextFormField(
                       controller: _usernameController,
                       decoration: const InputDecoration(
-                        labelText: "Benutzername",
+                        labelText: "Username",
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Bitte Benutzernamen eingeben";
+                          return "Please enter username";
                         }
                         return null;
                       },
                     ),
                     const SizedBox(height: 15),
+
+                    // Passwort-Feld mit Sichtbarkeits-Toggle
                     TextFormField(
                       controller: _passwordController,
-                      decoration: const InputDecoration(labelText: "Passwort"),
+                      obscureText: _obscurePassword,
+                      decoration: InputDecoration(
+                        labelText: "Password",
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _obscurePassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _obscurePassword = !_obscurePassword;
+                            });
+                          },
+                        ),
+                      ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Bitte Passwort eingeben";
+                          return "Please enter password";
                         }
                         return null;
                       },
                     ),
+
                     const SizedBox(height: 15),
                     ElevatedButton(
                       onPressed: _login,
-                      child: const Text("Einloggen"),
+                      child: const Text("Login"),
                     ),
                   ],
                 ),

@@ -12,20 +12,20 @@ class SettingsPage extends StatefulWidget {
 class _SettingsPageState extends State<SettingsPage> {
   bool darkMode = false;
   bool notifications = true;
-  String language = 'Deutsch';
+  String language = 'English';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Einstellungen'),
+        title: const Text('Settings'),
       ),
       body: ListView(
         children: [
           const Padding(
             padding: EdgeInsets.fromLTRB(16, 16, 16, 8),
             child: Text(
-              'Allgemein',
+              'Genereak Settings',
               style: TextStyle(fontSize: 13, color: Colors.grey),
             ),
           ),
@@ -34,15 +34,15 @@ class _SettingsPageState extends State<SettingsPage> {
           SwitchListTile(
             value: darkMode,
             title: const Text('Dark Mode'),
-            subtitle: const Text('Dunkles App-Design verwenden'),
+            subtitle: const Text('Use Dark Mode theme'),
             onChanged: (v) => setState(() => darkMode = v),
           ),
 
           // Notifications
           SwitchListTile(
             value: notifications,
-            title: const Text('Benachrichtigungen'),
-            subtitle: const Text('Push-Mitteilungen aktivieren'),
+            title: const Text('Notifications'),
+            subtitle: const Text('Active notifications'),
             onChanged: (v) => setState(() => notifications = v),
           ),
 
@@ -50,7 +50,7 @@ class _SettingsPageState extends State<SettingsPage> {
 
           // Sprache
           ListTile(
-            title: const Text('Sprache'),
+            title: const Text('Language'),
             subtitle: Text(language),
             leading: const Icon(Icons.language),
             trailing: const Icon(Icons.chevron_right),
@@ -62,7 +62,7 @@ class _SettingsPageState extends State<SettingsPage> {
           // Über die App
           ListTile(
             leading: const Icon(Icons.info_outline),
-            title: const Text('Über die App'),
+            title: const Text('About'),
             onTap: () {
               showAboutDialog(
                 context: context,
@@ -71,7 +71,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 applicationIcon: const FlutterLogo(),
                 children: const [
                   SizedBox(height: 8),
-                  Text('Eine kleine App, die Schmetterlinge entdecken lässt.'),
+                  Text('An app to identify and learn about butterflies.'),
                 ],
               );
             },

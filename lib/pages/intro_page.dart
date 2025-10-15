@@ -27,7 +27,7 @@ class _IntroPageState extends State<IntroPage> {
 
               // Sub Title
               const Text(
-                "„Schmetterlinge entdecken einfach einfach“",
+                "„Discovering Butterflies made easy“",
                 style: TextStyle(color: Colors.grey, fontSize: 16),
                 textAlign: TextAlign.center,
               ),

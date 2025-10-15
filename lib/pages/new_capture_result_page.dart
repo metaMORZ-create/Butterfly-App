@@ -43,12 +43,12 @@ class NewCaptureResultPage extends StatelessWidget {
     // einfache Fehlermeldung anzeigen.
     if (info == null || speciesName == null) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Unbekannter Falter')),
+        appBar: AppBar(title: const Text('Unknown Species')),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(24),
             child: Text(
-              'Für diesen Schmetterling sind keine Informationen vorhanden.',
+              'There are no information available for the detected butterfly species.',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium,
             ),
@@ -137,7 +137,7 @@ class NewCaptureResultPage extends StatelessWidget {
                 if (userId == null) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
-                      content: Text('Keine User-ID gefunden. Bitte neu einloggen.'),
+                      content: Text('No User ID found. Please log in.'),
                     ),
                   );
                   return;
@@ -176,7 +176,7 @@ class NewCaptureResultPage extends StatelessWidget {
                   // Erfolgsmeldung
                   if (context.mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Upload ok! URL: ${result.imageUrl}')),
+                      SnackBar(content: Text('Upload ok!')),
                     );
                     Navigator.pop(context); // Zurück zur Kamera
                   }
@@ -185,13 +185,13 @@ class NewCaptureResultPage extends StatelessWidget {
                   if (context.mounted) Navigator.pop(context);
                   if (context.mounted) {
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(content: Text('Upload fehlgeschlagen: $e')),
+                      SnackBar(content: Text('Upload failed: $e')),
                     );
                   }
                 }
               },
               icon: const Icon(Icons.bookmark_added),
-              label: const Text('Fund speichern'),
+              label: const Text('Save to My Butterflies'),
             ),
           ),
         ),

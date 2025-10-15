@@ -6,7 +6,7 @@ class InfoPage extends StatelessWidget {
 
   void _notImplemented(BuildContext context, String feature) {
     ScaffoldMessenger.of(context).showSnackBar(
-      SnackBar(content: Text("$feature ist noch nicht implementiert.")),
+      SnackBar(content: Text("$feature not implemented yet.")),
     );
   }
 
@@ -16,7 +16,7 @@ class InfoPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Informationen"),
+        title: const Text("Information"),
       ),
       body: Center(
         child: Padding(
@@ -31,7 +31,7 @@ class InfoPage extends StatelessWidget {
               ),
               const SizedBox(height: 20),
               Text(
-                "Hier findest du deine Entdeckungen,\nden Katalog und die Heatmap.",
+                "Here you can find your uploaded butterflies, explore the catalog, and view the heatmap of butterfly sightings.",
                 style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                       color: Colors.grey[600],
                     ),
@@ -60,7 +60,7 @@ class InfoPage extends StatelessWidget {
                     );
                   },
                   icon: const Icon(Icons.bug_report),
-                  label: const Text("Meine gefundenen Schmetterlinge"),
+                  label: const Text("My Butterflies"),
                 ),
               ),
               const SizedBox(height: 16),
@@ -78,9 +78,9 @@ class InfoPage extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16),
                     ),
                   ),
-                  onPressed: () => _notImplemented(context, "Katalog"),
+                  onPressed: () => _notImplemented(context, "Catalog"),
                   icon: const Icon(Icons.collections_bookmark),
-                  label: const Text("Schmetterlingskatalog"),
+                  label: const Text("Butterfly Catalog"),
                 ),
               ),
               const SizedBox(height: 16),

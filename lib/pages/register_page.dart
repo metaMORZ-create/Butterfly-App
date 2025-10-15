@@ -31,7 +31,7 @@ class _RegisterPageState extends State<RegisterPage> {
       } else {
         ScaffoldMessenger.of(
           context,
-        ).showSnackBar(const SnackBar(content: Text("Registrierung fehlgeschlagen")));
+        ).showSnackBar(const SnackBar(content: Text("Registration failed")));
       }
     }
   }
@@ -61,7 +61,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       ),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Bitte E-Mail eingeben";
+                          return "Please enter an email";
                         }
                         return null;
                       },
@@ -69,11 +69,11 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 15),
                     TextFormField(
                       controller: _usernameController,
-                      decoration: const InputDecoration(labelText: "Benutzername"),
+                      decoration: const InputDecoration(labelText: "Username"),
                       keyboardType: TextInputType.emailAddress,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Bitte Benutzernamen eingeben";
+                          return "Please enter a username";
                         }
                         return null;
                       },
@@ -81,10 +81,10 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 15),
                     TextFormField(
                       controller: _passwordController,
-                      decoration: const InputDecoration(labelText: "Passwort"),
+                      decoration: const InputDecoration(labelText: "Password"),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
-                          return "Bitte Passwort eingeben";
+                          return "Please enter a password";
                         }
                         return null;
                       },
@@ -92,7 +92,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 15),
                     ElevatedButton(
                       onPressed: _login,
-                      child: const Text("Einloggen"),
+                      child: const Text("Register"),
                     ),
                   ],
                 ),

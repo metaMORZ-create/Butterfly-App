@@ -32,7 +32,7 @@ class _MyButterfliesPageState extends State<MyButterfliesPage> {
       if (id == null) {
         setState(() => _loading = false);
         ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(content: Text("Keine User-ID gefunden. Bitte neu einloggen.")),
+          const SnackBar(content: Text("No User ID found. Please log in.")),
         );
         return;
       }
@@ -42,7 +42,7 @@ class _MyButterfliesPageState extends State<MyButterfliesPage> {
       if (!mounted) return;
       setState(() => _loading = false);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Fehler beim Laden der User-ID: $e")),
+        SnackBar(content: Text("Error while Loading User ID: $e")),
       );
     }
   }
@@ -65,7 +65,7 @@ class _MyButterfliesPageState extends State<MyButterfliesPage> {
       if (!mounted) return;
       setState(() => _loading = false);
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text("Fehler beim Laden: $e")),
+        SnackBar(content: Text("Error while loading: $e")),
       );
     }
   }
@@ -87,7 +87,7 @@ class _MyButterfliesPageState extends State<MyButterfliesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Meine Schmetterlinge')),
+      appBar: AppBar(title: const Text('My Butterflies')),
       body: _loading
           ? const Center(child: CircularProgressIndicator())
           : _uploads.isEmpty

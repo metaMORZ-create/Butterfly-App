@@ -26,12 +26,12 @@ class FindingResultPage extends StatelessWidget {
     // Fehlermeldung, falls nicht gefunden
     if (speciesName == null || info == null) {
       return Scaffold(
-        appBar: AppBar(title: const Text('Unbekannter Falter')),
+        appBar: AppBar(title: const Text('Unknown Species')),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(24),
             child: Text(
-              'Für diesen Schmetterling sind keine Informationen vorhanden.',
+              'There are no information available for the detected butterfly species.',
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.titleMedium,
             ),
