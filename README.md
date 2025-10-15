@@ -44,7 +44,7 @@ sequenceDiagram
             Login->>LoginSvc: login(username,password)
             LoginSvc->>HTTP: POST /api/users/login
             HTTP-->>LoginSvc: { user, user_id }
-            LoginSvc->>SharedPrefs: clear(); set loggedIn=true; username; user_id
+            LoginSvc->>SharedPrefs: clear(), set loggedIn=true, username, user_id
             LoginSvc-->>Login: Erfolg=true
             Login->>Home: navigieren
         else Benutzer wählt „Register“
@@ -54,7 +54,7 @@ sequenceDiagram
             Register->>LoginSvc: register(email,username,password)
             LoginSvc->>HTTP: POST /api/users/register
             HTTP-->>LoginSvc: { user, user_id }
-            LoginSvc->>SharedPrefs: clear(); set loggedIn=true; username; user_id
+            LoginSvc->>SharedPrefs: clear(), set loggedIn=true, username, user_id
             LoginSvc-->>Register: Erfolg=true
             Register->>Home: navigieren
         end
