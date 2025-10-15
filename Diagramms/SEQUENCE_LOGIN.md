@@ -7,7 +7,7 @@ sequenceDiagram
     participant ClientSvc as LoginRegisterService
     participant HTTPS
     participant API as Backend API
-    participant Hasher as PasswordHasher (Argon2id)
+    participant Hasher as PasswordHasher (serverseitig)
     participant DB as Database
     participant SharedPrefs as SharedPreferences
     participant Home as HomePage
@@ -19,9 +19,7 @@ sequenceDiagram
     Register->>ClientSvc: register(email, username, password)
     ClientSvc->>HTTPS: POST /users/register {username, email, password}
     HTTPS->>API: Request weiterleiten
-    API->>Hasher: generateSalt()
-    Hasher-->>API: salt
-    API->>Hasher: hash(password, salt)  %% Argon2id
+    API->>Hasher: hash(password, salt) erzeugen
     Hasher-->>API: passwordHash
     API->>DB: INSERT user {username, email, salt, passwordHash}
     DB-->>API: ok
@@ -43,7 +41,7 @@ sequenceDiagram
     API->>DB: SELECT salt, passwordHash BY username
     DB-->>API: {salt, passwordHash}
     API->>Hasher: verify(password, salt, passwordHash)
-    Hasher-->>API: valid=true
+    Hasher-->>API: valid = true
     API-->>HTTPS: { user, user_id }
     HTTPS-->>ClientSvc: Response
     ClientSvc->>SharedPrefs: setBool('loggedIn', true)
