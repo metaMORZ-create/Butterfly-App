@@ -15,13 +15,19 @@ class _RegisterPageState extends State<RegisterPage> {
   final _passwordController = TextEditingController();
   final _emailController = TextEditingController();
 
-  void _login() async {
+  bool _obscurePassword = true;
+
+  void _register() async {
     if (_formKey.currentState!.validate()) {
       final email = _emailController.text.trim();
       final username = _usernameController.text.trim();
       final password = _passwordController.text.trim();
-      // Login überprüfen und ggf. weiterleiten
-      final success = await LoginRegisterService.register(email, username, password);
+
+      final success = await LoginRegisterService.register(
+        email,
+        username,
+        password,
+      );
       if (success) {
         Navigator.pushAndRemoveUntil(
           context,
@@ -36,6 +42,25 @@ class _RegisterPageState extends State<RegisterPage> {
     }
   }
 
+  String? _validatePassword(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Please enter a password";
+    }
+
+    // Regex für Passwortanforderungen
+    final regex = RegExp(
+      r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#\$%^&*(),.?":{}|<>]).{8,}$',
+    );
+
+    if (!regex.hasMatch(value)) {
+      return "Password must have at least 8 characters,\n"
+          "one uppercase, one lowercase, one number,\n"
+          "and one special character.";
+    }
+
+    return null; // gültig
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -46,19 +71,15 @@ class _RegisterPageState extends State<RegisterPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Logo
               const Icon(Icons.bug_report, size: 100, color: Colors.purple),
               const SizedBox(height: 10),
               Form(
                 key: _formKey,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     TextFormField(
                       controller: _emailController,
-                      decoration: const InputDecoration(
-                        labelText: "E-Mail",
-                      ),
+                      decoration: const InputDecoration(labelText: "E-Mail"),
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "Please enter an email";
@@ -70,7 +91,6 @@ class _RegisterPageState extends State<RegisterPage> {
                     TextFormField(
                       controller: _usernameController,
                       decoration: const InputDecoration(labelText: "Username"),
-                      keyboardType: TextInputType.emailAddress,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "Please enter a username";
@@ -81,17 +101,27 @@ class _RegisterPageState extends State<RegisterPage> {
                     const SizedBox(height: 15),
                     TextFormField(
                       controller: _passwordController,
-                      decoration: const InputDecoration(labelText: "Password"),
-                      validator: (value) {
-                        if (value == null || value.isEmpty) {
-                          return "Please enter a password";
-                        }
-                        return null;
-                      },
+                      obscureText: _obscurePassword,
+                      decoration: InputDecoration(
+                        labelText: "Password",
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _obscurePassword
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _obscurePassword = !_obscurePassword;
+                            });
+                          },
+                        ),
+                      ),
+                      validator: _validatePassword,
                     ),
-                    const SizedBox(height: 15),
+                    const SizedBox(height: 20),
                     ElevatedButton(
-                      onPressed: _login,
+                      onPressed: _register,
                       child: const Text("Register"),
                     ),
                   ],
