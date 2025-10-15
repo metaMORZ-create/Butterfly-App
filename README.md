@@ -141,3 +141,4 @@ sequenceDiagram
     LoginSvc-->>Settings: true
     Settings->>Intro: pushAndRemoveUntil(IntroPage)
     Intro: IntroPage wieder sichtbar
+``` 
